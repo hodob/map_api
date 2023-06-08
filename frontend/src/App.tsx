@@ -1,25 +1,56 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+import routes from './routes';
+
+// type routesType = {
+//     type: string,
+//     name: string,
+//     key: string,
+//     route: string,
+//     icon: any,
+//     component: any,
+//     noCollapse: boolean,
+//     protected: boolean,
+// };
+type RouteType = {
+  type: string;
+  name: string;
+  key: string;
+  route: string;
+  icon: any;
+  component: any;
+  noCollapse: boolean;
+  protected: boolean;
+};
+
+
+
+const getRoutes = (allRoutes : RouteType) =>
+(
+  allRoutes.map((route:any) => {
+    //   if (route.collapse) {
+    //     return getRoutes(route.collapse);
+    //   }
+
+    //   if (route.route) {
+    //     if (route.protected) {
+    //       return <ProtectedRoute path={route.route} component={route.component} key={route.key} />;
+    //     }
+    //     return (
+    //     <Route exact path={route.route} component={route.component} key={route.key} />
+    //     );
+
+    //   }
+    //   return null;
+    })
+)
+    ;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {getRoutes(routes)}
+    </>
   );
 }
 
