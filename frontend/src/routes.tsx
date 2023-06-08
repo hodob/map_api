@@ -1,4 +1,5 @@
-import MainLayout from "./layouts/main";
+import Login from "./layouts/authentication/Login";
+import MainLayout from "./layouts/main/MainLayout";
 
 
 const routes = [
@@ -13,16 +14,34 @@ const routes = [
       protected: false,
     },
     {
-        type: "none",
-        name: "dummy",
-        key: "dummy-layout",
-        route: "/dummy",
-      //   icon: <Shop size="12px" />,
-        component: MainLayout,
-        noCollapse: true,
-        protected: false,
-      },
+      type: "none",
+      name: "Login",
+      key: "login",
+      route: "/authentication/login",
+      // icon: <Document size="12px" />,
+      component: Login,
+      noCollapse: true,
+      protected: false,
+    },
     // {
+    //   type: "none",
+    //   name: "Sign Up",
+    //   key: "sign-up",
+    //   route: "/authentication/sign-up",
+    //   // icon: <SpaceShip size="12px" />,
+    //   component: null,
+    //   noCollapse: true,
+    // },
+    // {
+    //   type: "collapse",
+    //   name: "Logout",
+    //   key: "sign-out",
+    //   route: "/authentication/sign-out",
+    //   // icon: <SpaceShip size="12px" />,
+    //   component: null,
+    //   noCollapse: true,
+    // },
+        // {
     //   type: "collapse",
     //   name: "Dashboard",
     //   key: "dashboard",
@@ -82,33 +101,6 @@ const routes = [
     //   component: Profile,
     //   noCollapse: true,
     //   protected: true,
-    // },
-    // {
-    //   type: "none",
-    //   name: "Sign In",
-    //   key: "sign-in",
-    //   route: "/authentication/sign-in",
-    //   icon: <Document size="12px" />,
-    //   component: SignIn,
-    //   noCollapse: true,
-    // },
-    // {
-    //   type: "none",
-    //   name: "Sign Up",
-    //   key: "sign-up",
-    //   route: "/authentication/sign-up",
-    //   icon: <SpaceShip size="12px" />,
-    //   component: SignUp,
-    //   noCollapse: true,
-    // },
-    // {
-    //   type: "collapse",
-    //   name: "Logout",
-    //   key: "sign-out",
-    //   route: "/authentication/sign-out",
-    //   icon: <SpaceShip size="12px" />,
-    //   component: SignOut,
-    //   noCollapse: true,
     // },
   ];
   

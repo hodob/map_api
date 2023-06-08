@@ -20,7 +20,8 @@ const KakaoMap = () => {
     };
   }, []);
 
-  return <div id="map" style={{ width: '5000px', height: '4000px' }}></div>;
+  // return <div id="map" style={{ width: '5000px', height: '4000px' }}></div>;
+  return <div id="map" style={{ width: '90vw', height: '80vh' }}></div>;
   
 };
 

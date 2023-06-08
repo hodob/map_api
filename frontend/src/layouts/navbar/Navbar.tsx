@@ -12,7 +12,7 @@ function NavbarLayout() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="#home">데이터</Nav.Link>
-            <Nav.Link href="#link">로그인</Nav.Link>
+            <Nav.Link href="/authentication/login">로그인</Nav.Link>
             <Nav.Link href="#link">로그아웃</Nav.Link>
 
             {/* <NavDropdown title="Dropdownㅇㅇㅇ" id="basic-nav-dropdown">

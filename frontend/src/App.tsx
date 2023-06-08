@@ -5,7 +5,7 @@ import routes from './routes';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import NavbarLayout from './layouts/navbar';
+import NavbarLayout from './layouts/navbar/Navbar';
 
 type RouteType = {
   type: string;
