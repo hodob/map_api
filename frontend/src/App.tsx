@@ -1,56 +1,40 @@
 import React from 'react';
 
+import { Route,Routes } from "react-router-dom";
 import routes from './routes';
 
-// type routesType = {
-//     type: string,
-//     name: string,
-//     key: string,
-//     route: string,
-//     icon: any,
-//     component: any,
-//     noCollapse: boolean,
-//     protected: boolean,
-// };
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import NavbarLayout from './layouts/navbar';
+
 type RouteType = {
   type: string;
   name: string;
   key: string;
   route: string;
-  icon: any;
-  component: any;
+  // icon: any;
+  component: () => JSX.Element;
   noCollapse: boolean;
   protected: boolean;
 };
 
-
-
-const getRoutes = (allRoutes : RouteType) =>
-(
-  allRoutes.map((route:any) => {
-    //   if (route.collapse) {
-    //     return getRoutes(route.collapse);
-    //   }
-
-    //   if (route.route) {
-    //     if (route.protected) {
-    //       return <ProtectedRoute path={route.route} component={route.component} key={route.key} />;
-    //     }
-    //     return (
-    //     <Route exact path={route.route} component={route.component} key={route.key} />
-    //     );
-
-    //   }
-    //   return null;
-    })
-)
-    ;
+const getRoutes :any = (allRoutes: RouteType[]) =>
+allRoutes.map((route: RouteType) => 
+{
+  // if (true){
+  //   return <Route path={route.route} element={<route.component/>} key={route.key}/>
+  // }
+  return <Route path={route.route} element={<route.component/>} key={route.key}/>
+});
 
 function App() {
   return (
     <>
+    <NavbarLayout/>
+    <Routes>
       {getRoutes(routes)}
-    </>
+      </Routes>
+      </>
   );
 }
 
