@@ -65,8 +65,12 @@ function Signup() {
     //   return setError("You must enter a password.");
     // }
     try {
-      console.log("register")
-        let test = new AuthApi();
+      
+        let test = await AuthApi.Register({
+        id,
+        email,
+        password,
+        });
       // let response = await AuthApi.Register({
       //   username: firstName,
       //   email,

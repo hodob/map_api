@@ -47,10 +47,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'api',
+
     'rest_framework',
     'corsheaders',
     'environ',
+    
+    'api',
+    # "api.user",
+    "api.authentication",
+    
 ]
 
 MIDDLEWARE = [
@@ -66,6 +71,10 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'backend.urls'
+
+CORS_ORIGIN_WHITELIST = (
+    'http://127.0.0.1:3000', 'http://localhost:3000')
+CORS_ALLOW_CREDENTIALS = True
 
 TEMPLATES = [
     {
@@ -155,7 +164,3 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
-CORS_ORIGIN_WHITELIST = (
-    'http://127.0.0.1:3001', 'http://localhost:3001')
-CORS_ALLOW_CREDENTIALS = True

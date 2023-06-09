@@ -12,8 +12,11 @@
             "stopOnEntry": true,
             "program": "${workspaceFolder}/manage.py",
             "args": [
-                "runserver"
+                // "makemigrations",
+                // "migrate",
+                "runserver",
             ],
+            
             "django": true,
             "justMyCode": true
         }
