@@ -1,5 +1,5 @@
 
-import React, { useState, ChangeEvent, FormEvent } from 'react';
+import React, { useState, ChangeEvent, FormEvent ,useReducer,useContext,Dispatch} from 'react';
 import { Container, Form, Button, Collapse } from 'react-bootstrap';
 import AuthApi from '../../api/AuthApi';
 
@@ -66,16 +66,21 @@ function Signup() {
     // }
     try {
       
-        let test = await AuthApi.Register({
+
+      let response = await AuthApi.Register({
         id,
-        email,
         password,
-        });
-      // let response = await AuthApi.Register({
-      //   username: firstName,
-      //   email,
-      //   password,
-      // });
+        confirmPassword,
+        name,
+        email,
+        phone,
+        address,
+        dob,
+        agreeTerms,
+        agreePrivacyPolicy,
+        agreeDataProcessing,
+        
+      });
 
       // if (response.data && response.data.success === false) {
       //   setButtonText("Sign up");
