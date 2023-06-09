@@ -7,11 +7,11 @@ function NavbarLayout() {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="#home">(주)다츠</Navbar.Brand>
+        <Navbar.Brand href="/">(주)다츠</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">데이터</Nav.Link>
+            <Nav.Link href="/authentication/signup">회원가입</Nav.Link>
             <Nav.Link href="/authentication/login">로그인</Nav.Link>
             <Nav.Link href="#link">로그아웃</Nav.Link>
 

@@ -5,6 +5,7 @@ declare global {
   }
 }
 const KakaoMap = () => {
+  
   useEffect(() => {
       const container :any= document.getElementById('map');
       const options :any= {

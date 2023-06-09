@@ -1,4 +1,5 @@
 import Login from "./layouts/authentication/Login";
+import Signup from "./layouts/authentication/Signup";
 import MainLayout from "./layouts/main/MainLayout";
 
 
@@ -23,15 +24,16 @@ const routes = [
       noCollapse: true,
       protected: false,
     },
-    // {
-    //   type: "none",
-    //   name: "Sign Up",
-    //   key: "sign-up",
-    //   route: "/authentication/sign-up",
-    //   // icon: <SpaceShip size="12px" />,
-    //   component: null,
-    //   noCollapse: true,
-    // },
+    {
+      type: "none",
+      name: "Signup",
+      key: "signup",
+      route: "/authentication/signup",
+      // icon: <SpaceShip size="12px" />,
+      component: Signup,
+      noCollapse: true,
+      protected: false,
+    },
     // {
     //   type: "collapse",
     //   name: "Logout",
