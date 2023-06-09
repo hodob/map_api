@@ -51,8 +51,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     agreeTerms=models.CharField(max_length=128, blank=True)
     agreePrivacyPolicy=models.CharField(max_length=128, blank=True)
     agreeDataProcessing=models.CharField(max_length=128, blank=True)
-    is_active=models.CharField(max_length=128, blank=True)
-    date=models.CharField(max_length=128, blank=True)
+    is_active=models.BooleanField(max_length=128, default=True)
+    date=models.CharField(max_length=128, blank=True )
     
     # username = models.CharField(db_index=True, max_length=255, unique=True)
     # email = models.EmailField(db_index=True, unique=True)
@@ -65,5 +65,5 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     # objects = UserManager()
 
-    def __str__(self):
-        return f"{self.email}"
+    # def __str__(self):
+    #     return f"{self.email}"
