@@ -1,5 +1,5 @@
 
-import React, { useState, ChangeEvent, FormEvent ,useReducer,useContext,Dispatch} from 'react';
+import React, { useState, ChangeEvent, FormEvent, useReducer, useContext, Dispatch } from 'react';
 import { Container, Form, Button, Collapse } from 'react-bootstrap';
 import AuthApi from '../../api/AuthApi';
 
@@ -11,7 +11,7 @@ function Signup() {
     agreeDataProcessing: boolean;
   }
 
-  const [id, setId] = useState('');
+  const [userid, setId] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [name, setName] = useState('');
@@ -27,7 +27,7 @@ function Signup() {
   const [showTerms1, setShowTerms1] = useState(false);
   const [showTerms2, setShowTerms2] = useState(false);
   const [showTerms3, setShowTerms3] = useState(false);
-  const handleSubmit = (e:any) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
     // Handle form submission here
   };
@@ -51,7 +51,7 @@ function Signup() {
     setShowTerms3(!showTerms3);
   };
 
-  const register = async (event:any) => {
+  const register = async (event: any) => {
     if (event) {
       event.preventDefault();
     }
@@ -65,12 +65,12 @@ function Signup() {
     //   return setError("You must enter a password.");
     // }
     try {
-      
+
 
       let response = await AuthApi.Register({
-        id,
+        userid,
         password,
-        confirmPassword,
+        // confirmPassword,
         name,
         email,
         phone,
@@ -79,7 +79,7 @@ function Signup() {
         agreeTerms,
         agreePrivacyPolicy,
         agreeDataProcessing,
-        
+
       });
 
       // if (response.data && response.data.success === false) {
@@ -104,13 +104,13 @@ function Signup() {
     <Container>
       <h1>Member 회원가입</h1>
       <Form onSubmit={handleSubmit}>
-        <Form.Group controlId="id">
+        <Form.Group controlId="userid">
           <Form.Label>아이디</Form.Label>
           <Form.Control
             type="text"
             placeholder="아이디를 입력해주세요"
-            value={id}
-            onChange={(e:any) => setId(e.target.value)}
+            value={userid}
+            onChange={(e: any) => setId(e.target.value)}
           />
         </Form.Group>
 
@@ -120,7 +120,7 @@ function Signup() {
             type="password"
             placeholder="Password"
             value={password}
-            onChange={(e:any) => setPassword(e.target.value)}
+            onChange={(e: any) => setPassword(e.target.value)}
           />
         </Form.Group>
 
@@ -130,7 +130,7 @@ function Signup() {
             type="password"
             placeholder="Confirm Password"
             value={confirmPassword}
-            onChange={(e:any) => setConfirmPassword(e.target.value)}
+            onChange={(e: any) => setConfirmPassword(e.target.value)}
           />
         </Form.Group>
 
@@ -140,7 +140,7 @@ function Signup() {
             type="text"
             placeholder="Enter Name"
             value={name}
-            onChange={(e:any) => setName(e.target.value)}
+            onChange={(e: any) => setName(e.target.value)}
           />
         </Form.Group>
 
@@ -150,7 +150,7 @@ function Signup() {
             type="email"
             placeholder="Enter Email"
             value={email}
-            onChange={(e:any) => setEmail(e.target.value)}
+            onChange={(e: any) => setEmail(e.target.value)}
           />
         </Form.Group>
 
@@ -160,7 +160,7 @@ function Signup() {
             type="tel"
             placeholder="Enter Mobile Phone"
             value={phone}
-            onChange={(e:any) => setPhone(e.target.value)}
+            onChange={(e: any) => setPhone(e.target.value)}
           />
         </Form.Group>
 
@@ -170,7 +170,7 @@ function Signup() {
             as="textarea"
             placeholder="Enter Address"
             value={address}
-            onChange={(e:any) => setAddress(e.target.value)}
+            onChange={(e: any) => setAddress(e.target.value)}
           />
         </Form.Group>
 
@@ -180,7 +180,7 @@ function Signup() {
             type="date"
             placeholder="Enter Date of Birth"
             value={dob}
-            onChange={(e:any) => setDob(e.target.value)}
+            onChange={(e: any) => setDob(e.target.value)}
           />
         </Form.Group>
 
@@ -201,16 +201,16 @@ function Signup() {
           <div>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut lectus in purus scelerisque pharetra ut vel dolor.
-              Nullam feugiat pharetra semper. Vivamus interdum consequat massa, eget mattis arcu feugiat eu. Suspendisse id malesuada nunc.
-              Integer vitae massa vel justo ullamcorper aliquet. Fusce placerat metus id felis fermentum facilisis.
+              Nullam feugiat pharetra semper. Vivamus interdum consequat massa, eget mattis arcu feugiat eu. Suspendisse userid malesuada nunc.
+              Integer vitae massa vel justo ullamcorper aliquet. Fusce placerat metus userid felis fermentum facilisis.
               Morbi a rhoncus odio. Suspendisse vitae sem et ex suscipit egestas. Praesent bibendum felis vitae ante malesuada, eget molestie orci rhoncus.
               Etiam tincidunt sem vel pharetra lacinia. Aenean dignissim tellus a lacus pulvinar, nec bibendum elit tempor.
             </p>
             <p>
               Donec in tristique metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
-              Sed vitae sagittis urna, id sollicitudin sapien. Maecenas cursus scelerisque dui, vitae fermentum arcu finibus nec.
+              Sed vitae sagittis urna, userid sollicitudin sapien. Maecenas cursus scelerisque dui, vitae fermentum arcu finibus nec.
               Proin efficitur feugiat velit, sit amet elementum felis pellentesque eget. Aliquam volutpat lacus at dapibus iaculis.
-              Integer id lectus nisl. Fusce at volutpat orci, nec pulvinar sem. Nunc blandit vestibulum est at aliquam.
+              Integer userid lectus nisl. Fusce at volutpat orci, nec pulvinar sem. Nunc blandit vestibulum est at aliquam.
             </p>
           </div>
         </Collapse>
@@ -232,16 +232,16 @@ function Signup() {
           <div>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut lectus in purus scelerisque pharetra ut vel dolor.
-              Nullam feugiat pharetra semper. Vivamus interdum consequat massa, eget mattis arcu feugiat eu. Suspendisse id malesuada nunc.
-              Integer vitae massa vel justo ullamcorper aliquet. Fusce placerat metus id felis fermentum facilisis.
+              Nullam feugiat pharetra semper. Vivamus interdum consequat massa, eget mattis arcu feugiat eu. Suspendisse userid malesuada nunc.
+              Integer vitae massa vel justo ullamcorper aliquet. Fusce placerat metus userid felis fermentum facilisis.
               Morbi a rhoncus odio. Suspendisse vitae sem et ex suscipit egestas. Praesent bibendum felis vitae ante malesuada, eget molestie orci rhoncus.
               Etiam tincidunt sem vel pharetra lacinia. Aenean dignissim tellus a lacus pulvinar, nec bibendum elit tempor.
             </p>
             <p>
               Donec in tristique metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
-              Sed vitae sagittis urna, id sollicitudin sapien. Maecenas cursus scelerisque dui, vitae fermentum arcu finibus nec.
+              Sed vitae sagittis urna, userid sollicitudin sapien. Maecenas cursus scelerisque dui, vitae fermentum arcu finibus nec.
               Proin efficitur feugiat velit, sit amet elementum felis pellentesque eget. Aliquam volutpat lacus at dapibus iaculis.
-              Integer id lectus nisl. Fusce at volutpat orci, nec pulvinar sem. Nunc blandit vestibulum est at aliquam.
+              Integer userid lectus nisl. Fusce at volutpat orci, nec pulvinar sem. Nunc blandit vestibulum est at aliquam.
             </p>
           </div>
         </Collapse>
@@ -263,16 +263,16 @@ function Signup() {
           <div>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut lectus in purus scelerisque pharetra ut vel dolor.
-              Nullam feugiat pharetra semper. Vivamus interdum consequat massa, eget mattis arcu feugiat eu. Suspendisse id malesuada nunc.
-              Integer vitae massa vel justo ullamcorper aliquet. Fusce placerat metus id felis fermentum facilisis.
+              Nullam feugiat pharetra semper. Vivamus interdum consequat massa, eget mattis arcu feugiat eu. Suspendisse userid malesuada nunc.
+              Integer vitae massa vel justo ullamcorper aliquet. Fusce placerat metus userid felis fermentum facilisis.
               Morbi a rhoncus odio. Suspendisse vitae sem et ex suscipit egestas. Praesent bibendum felis vitae ante malesuada, eget molestie orci rhoncus.
               Etiam tincidunt sem vel pharetra lacinia. Aenean dignissim tellus a lacus pulvinar, nec bibendum elit tempor.
             </p>
             <p>
               Donec in tristique metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
-              Sed vitae sagittis urna, id sollicitudin sapien. Maecenas cursus scelerisque dui, vitae fermentum arcu finibus nec.
+              Sed vitae sagittis urna, userid sollicitudin sapien. Maecenas cursus scelerisque dui, vitae fermentum arcu finibus nec.
               Proin efficitur feugiat velit, sit amet elementum felis pellentesque eget. Aliquam volutpat lacus at dapibus iaculis.
-              Integer id lectus nisl. Fusce at volutpat orci, nec pulvinar sem. Nunc blandit vestibulum est at aliquam.
+              Integer userid lectus nisl. Fusce at volutpat orci, nec pulvinar sem. Nunc blandit vestibulum est at aliquam.
             </p>
           </div>
         </Collapse>
@@ -282,7 +282,7 @@ function Signup() {
             type="checkbox"
             label="전체동의"
             checked={agreeTerms && agreePrivacyPolicy && agreeDataProcessing}
-            onChange={() =>{
+            onChange={() => {
               if (agreeTerms || agreePrivacyPolicy || agreeDataProcessing) {
                 setTermsAgreements((prevAgreements) => ({
                   ...prevAgreements,
@@ -302,10 +302,10 @@ function Signup() {
             }}
           />
         </Form.Group>
-        <Button 
-        variant="primary" 
-        onClick={register} 
-        disabled={!agreeTerms || !agreePrivacyPolicy || !agreeDataProcessing}>
+        <Button
+          variant="primary"
+          onClick={register}
+          disabled={!agreeTerms || !agreePrivacyPolicy || !agreeDataProcessing}>
           Sign Up
         </Button>
       </Form>
