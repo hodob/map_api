@@ -1,6 +1,7 @@
 
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import { Container, Form, Button, Collapse } from 'react-bootstrap';
+import AuthApi from '../../api/AuthApi';
 
 function Signup() {
 
@@ -49,6 +50,46 @@ function Signup() {
   const toggleTerms3 = () => {
     setShowTerms3(!showTerms3);
   };
+
+  const register = async (event:any) => {
+    if (event) {
+      event.preventDefault();
+    }
+    // if (firstName === "") {
+    //   return setError("You must enter your first name.");
+    // }
+    // if (email === "") {
+    //   return setError("You must enter your email.");
+    // }
+    // if (password === "") {
+    //   return setError("You must enter a password.");
+    // }
+    try {
+      console.log("register")
+        let test = new AuthApi();
+      // let response = await AuthApi.Register({
+      //   username: firstName,
+      //   email,
+      //   password,
+      // });
+
+      // if (response.data && response.data.success === false) {
+      //   setButtonText("Sign up");
+      //   return setError(response.data.msg);
+      // }
+      // return history.push("/authentication/sign-in");
+    } catch (err) {
+      console.log(err);
+      // setButtonText("Sign up");
+      // if (err.response) {
+      //   return setError(err.response.data.msg);
+      // }
+      // return setError("There has been an error.");
+    }
+  };
+
+
+
 
   return (
     <Container>
@@ -137,7 +178,7 @@ function Signup() {
         <Form.Group controlId="agreeTerms">
           <Form.Check
             type="checkbox"
-            label="I agree to the Terms of Use"
+            label="이용약관동의 (필수)"
             name="agreeTerms"
             checked={agreeTerms}
             onChange={handleAgreementChange}
@@ -168,7 +209,7 @@ function Signup() {
         <Form.Group controlId="agreePrivacyPolicy">
           <Form.Check
             type="checkbox"
-            label="I agree to the Privacy Policy"
+            label="개인정보 수집 및 이용동의 (필수)"
             name="agreePrivacyPolicy"
             checked={agreePrivacyPolicy}
             onChange={handleAgreementChange}
@@ -199,7 +240,7 @@ function Signup() {
         <Form.Group controlId="agreeDataProcessing">
           <Form.Check
             type="checkbox"
-            label="I agree to Data Processing"
+            label="개인정보 수집 및 이용동의 (선택)"
             name="agreeDataProcessing"
             checked={agreeDataProcessing}
             onChange={handleAgreementChange}
@@ -230,19 +271,32 @@ function Signup() {
         <Form.Group controlId="termsAgreement">
           <Form.Check
             type="checkbox"
-            label="I have read and agree to the Terms and Conditions"
+            label="전체동의"
             checked={agreeTerms && agreePrivacyPolicy && agreeDataProcessing}
-            onChange={() =>
-              setTermsAgreements((prevAgreements) => ({
-                ...prevAgreements,
-                agreeTerms: !agreeTerms,
-                agreePrivacyPolicy: !agreePrivacyPolicy,
-                agreeDataProcessing: !agreeDataProcessing,
-              }))
-            }
+            onChange={() =>{
+              if (agreeTerms || agreePrivacyPolicy || agreeDataProcessing) {
+                setTermsAgreements((prevAgreements) => ({
+                  ...prevAgreements,
+                  agreeTerms: false,
+                  agreePrivacyPolicy: false,
+                  agreeDataProcessing: false,
+                }))
+              }
+              else {
+                setTermsAgreements((prevAgreements) => ({
+                  ...prevAgreements,
+                  agreeTerms: true,
+                  agreePrivacyPolicy: true,
+                  agreeDataProcessing: true,
+                }))
+              }
+            }}
           />
         </Form.Group>
-        <Button variant="primary" type="submit" disabled={!agreeTerms || !agreePrivacyPolicy || !agreeDataProcessing}>
+        <Button 
+        variant="primary" 
+        onClick={register} 
+        disabled={!agreeTerms || !agreePrivacyPolicy || !agreeDataProcessing}>
           Sign Up
         </Button>
       </Form>
