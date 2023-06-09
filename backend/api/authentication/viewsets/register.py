@@ -30,15 +30,15 @@ class RegisterViewSet(viewsets.ModelViewSet):
     # serializer_class = RegisterSerializer
 
     def create(self, request, *args, **kwargs):
-        serializer = self.get_serializer(data=request.data)
+        # serializer = self.get_serializer(data=request.data)
 
-        serializer.is_valid(raise_exception=True)
-        user = serializer.save()
+        # serializer.is_valid(raise_exception=True)
+        # user = serializer.save()
 
         return Response(
             {
                 "success": True,
-                "userID": user.id,
+                # "userID": user.id,
                 "msg": "The user was successfully registered",
             },
             status=status.HTTP_201_CREATED,
