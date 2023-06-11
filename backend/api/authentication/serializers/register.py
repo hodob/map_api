@@ -20,6 +20,8 @@ from django.core.exceptions import ObjectDoesNotExist
 #             return value
 #         raise ValidationError({"success": False, "msg": "Username already taken."})
 
+
+
 #     def validate_email(self, value):
 #         try:
 #             User.objects.get(email=value)
