@@ -3,7 +3,7 @@ import React, { useState, ChangeEvent, FormEvent, useReducer, useContext, Dispat
 import { Container, Form, Button, Collapse } from 'react-bootstrap';
 import AuthApi from '../../api/AuthApi';
 import { randomUUID } from 'crypto';
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -14,7 +14,7 @@ function Signup() {
     agreePrivacyPolicy: boolean;
     agreeDataProcessing: boolean;
   }
-  const history = useHistory();
+  const Navigate = useNavigate();
   const [userid, setId] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -71,8 +71,6 @@ function Signup() {
     //   return setError("You must enter a password.");
     // }
     try {
-
-
       let response = await AuthApi.Register({
         password,
         name,
@@ -86,15 +84,9 @@ function Signup() {
 
       });
       if (response.data && response.data.success === false) {
-        // setButtonText("Sign up");
         return setError(response.data.msg);
       }
-
-      // if (response.data && response.data.success === false) {
-      //   setButtonText("Sign up");
-      //   return setError(response.data.msg);
-      // }
-      return history.push("/authentication/sign-in");
+      return Navigate("/authentication/sign-in")
     } catch (err:any) {
       console.log(err);
       if (err.response) {
@@ -120,16 +112,6 @@ function Signup() {
             onChange={(e: any) => setEmail(e.target.value)}
           />
         </Form.Group>
-        {/* <Form.Group controlId="userid">
-          <Form.Label>아이디</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="아이디를 입력해주세요"
-            value={userid}
-            onChange={(e: any) => setId(e.target.value)}
-          />
-        </Form.Group> */}
-
         <Form.Group controlId="password">
           <Form.Label>Password</Form.Label>
           <Form.Control
