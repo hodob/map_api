@@ -7,6 +7,8 @@ from django.contrib.auth.models import (
 )
 
 
+
+
 # class UserManager(BaseUserManager):
 #     def create_user(self, name, email, password=None, **kwargs):
 #         """Create and return a `User` with an email, username and password."""
@@ -41,27 +43,31 @@ from django.contrib.auth.models import (
 
 
 class User(AbstractBaseUser, PermissionsMixin):
-    # id=models.AutoField(primary_key=True)
-    test=models.CharField(max_length=128, blank=True,unique=True)
-    # email = models.EmailField(db_index=True, unique=True)
-    # password = models.CharField(max_length=128, blank=True)
-    # name=models.CharField(max_length=128, blank=True)
-    # phone=models.CharField(max_length=128, blank=True)
-    # address=models.CharField(max_length=128, blank=True)
-    # dob=models.CharField(max_length=128, blank=True)
-    # agreeTerms=models.CharField(max_length=128, blank=True)
-    # agreePrivacyPolicy=models.CharField(max_length=128, blank=True)
-    # agreeDataProcessing=models.CharField(max_length=128, blank=True)
-    # is_active=models.BooleanField(max_length=128, default=True)
-    # is_admin=models.BooleanField(max_length=128, default=False)
-    # date_join=models.DateTimeField(auto_now_add=True)
-    # last_login=models.DateTimeField(auto_now_add=True)
+#     # id=models.AutoField(primary_key=True)
+    
+    email = models.EmailField(db_index=True, unique=True)
+    password = models.CharField(max_length=128, blank=True)
+    name=models.CharField(max_length=128, blank=True)
+    phone=models.CharField(max_length=128, blank=True)
+    address=models.CharField(max_length=128, blank=True)
+    dob=models.CharField(max_length=128, blank=True)
+    agreeTerms=models.CharField(max_length=128, blank=True)
+    agreePrivacyPolicy=models.CharField(max_length=128, blank=True)
+    agreeDataProcessing=models.CharField(max_length=128, blank=True)
+    is_active=models.BooleanField(max_length=128, default=True)
+    is_admin=models.BooleanField(max_length=128, default=False)
+    date_join=models.DateTimeField(auto_now_add=True)
+    last_login=models.DateTimeField(auto_now_add=True)
     
 
-    USERNAME_FIELD = "test"
+    USERNAME_FIELD = "email"
     # REQUIRED_FIELDS = ["username"]
 
     # objects = UserManager()
 
-    # def __str__(self):
-    #     return f"{self.email}"
+    def __str__(self):
+        return f"{self.email}"
+
+
+class Test():
+    test2=models.CharField()
