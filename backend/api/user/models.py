@@ -7,19 +7,19 @@ from django.contrib.auth.models import (
 )
 
 
-# class UserManager(BaseUserManager):
-    # def create_user(self, username, email, password=None, **kwargs):
-    #     """Create and return a `User` with an email, username and password."""
-    #     if username is None:
-    #         raise TypeError("Users must have a username.")
-    #     if email is None:
-    #         raise TypeError("Users must have an email.")
+class UserManager(BaseUserManager):
+    def create_user(self, name, email, password=None, **kwargs):
+        """Create and return a `User` with an email, username and password."""
+        # if username is None:
+        #     raise TypeError("Users must have a username.")
+        # if email is None:
+        #     raise TypeError("Users must have an email.")
 
-    #     user = self.model(username=username, email=self.normalize_email(email))
-    #     user.set_password(password)
-    #     user.save(using=self._db)
+        user = self.model(name=name, email=self.normalize_email(email))
+        user.set_password(password)
+        user.save(using=self._db)
 
-    #     return user
+        return user
 
     # def create_superuser(self, username, email, password):
     #     """
@@ -41,10 +41,9 @@ from django.contrib.auth.models import (
 
 
 class User(AbstractBaseUser, PermissionsMixin):
-    userid = models.CharField(db_index=True, max_length=255, unique=True)
-    password = models.CharField(max_length=128, blank=True)
-    name=models.CharField(max_length=128, blank=True)
     email = models.EmailField(db_index=True, unique=True)
+    password = models.CharField(blank=True)
+    name=models.CharField(max_length=128, blank=True)
     phone=models.CharField(max_length=128, blank=True)
     address=models.CharField(max_length=128, blank=True)
     dob=models.CharField(max_length=128, blank=True)
@@ -52,18 +51,15 @@ class User(AbstractBaseUser, PermissionsMixin):
     agreePrivacyPolicy=models.CharField(max_length=128, blank=True)
     agreeDataProcessing=models.CharField(max_length=128, blank=True)
     is_active=models.BooleanField(max_length=128, default=True)
-    date=models.CharField(max_length=128, blank=True )
+    is_admin=models.BooleanField(max_length=128, default=False)
+    date_join=models.DateTimeField(auto_now_add=True)
+    # last_login=models.DateTimeField(auto_now_add=True)
     
-    # username = models.CharField(db_index=True, max_length=255, unique=True)
-    # email = models.EmailField(db_index=True, unique=True)
-    # is_active = models.BooleanField(default=True)
-    # is_staff = models.BooleanField(default=False)
-    # date = models.DateTimeField(auto_now_add=True)
 
-    # USERNAME_FIELD = "email"
+    USERNAME_FIELD = "email"
     # REQUIRED_FIELDS = ["username"]
 
     # objects = UserManager()
 
-    # def __str__(self):
-    #     return f"{self.email}"
+    def __str__(self):
+        return f"{self.email}"

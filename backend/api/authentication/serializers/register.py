@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
 from django.core.exceptions import ObjectDoesNotExist
-# from api.user.models import User
+from api.user.models import User
 
 
 # class RegisterSerializer(serializers.ModelSerializer):
@@ -30,9 +30,4 @@ from django.core.exceptions import ObjectDoesNotExist
 #         raise ValidationError({"success": False, "msg": "Email already taken."})
 
 #     def create(self, validated_data):
-
-
-
-
-
 #         return User.objects.create_user(**validated_data)

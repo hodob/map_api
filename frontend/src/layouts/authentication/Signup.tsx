@@ -68,7 +68,6 @@ function Signup() {
 
 
       let response = await AuthApi.Register({
-        userid,
         password,
         // confirmPassword,
         name,
@@ -104,7 +103,16 @@ function Signup() {
     <Container>
       <h1>Member 회원가입</h1>
       <Form onSubmit={handleSubmit}>
-        <Form.Group controlId="userid">
+      <Form.Group controlId="email">
+          <Form.Label>Email address</Form.Label>
+          <Form.Control
+            type="email"
+            placeholder="Enter Email"
+            value={email}
+            onChange={(e: any) => setEmail(e.target.value)}
+          />
+        </Form.Group>
+        {/* <Form.Group controlId="userid">
           <Form.Label>아이디</Form.Label>
           <Form.Control
             type="text"
@@ -112,7 +120,7 @@ function Signup() {
             value={userid}
             onChange={(e: any) => setId(e.target.value)}
           />
-        </Form.Group>
+        </Form.Group> */}
 
         <Form.Group controlId="password">
           <Form.Label>Password</Form.Label>
@@ -144,15 +152,7 @@ function Signup() {
           />
         </Form.Group>
 
-        <Form.Group controlId="email">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control
-            type="email"
-            placeholder="Enter Email"
-            value={email}
-            onChange={(e: any) => setEmail(e.target.value)}
-          />
-        </Form.Group>
+
 
         <Form.Group controlId="phone">
           <Form.Label>Mobile Phone</Form.Label>
