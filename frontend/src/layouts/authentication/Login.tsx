@@ -58,6 +58,7 @@ function Login() {
   return (
     <Container>
       <h1>Login</h1>
+      <h1>{error}</h1>
       <Form>
         <Form.Group controlId="formEmail">
           <Form.Label>Email address</Form.Label>
