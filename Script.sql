@@ -1,4 +1,4 @@
-DROP DATABASE db_name WITH (FORCE);
+DROP DATABASE map_api WITH (FORCE);
 CREATE DATABASE map_api
     WITH
     OWNER = waterdats
