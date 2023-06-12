@@ -1,6 +1,7 @@
 import Login from "./layouts/authentication/Login";
 import Signup from "./layouts/authentication/Signup";
 import MainLayout from "./layouts/main/MainLayout";
+import Logout from "./layouts/authentication/Logout";
 
 
 const routes = [
@@ -34,15 +35,15 @@ const routes = [
       noCollapse: true,
       protected: false,
     },
-    // {
-    //   type: "collapse",
-    //   name: "Logout",
-    //   key: "sign-out",
-    //   route: "/authentication/sign-out",
-    //   // icon: <SpaceShip size="12px" />,
-    //   component: null,
-    //   noCollapse: true,
-    // },
+    {
+      type: "collapse",
+      name: "Logout",
+      key: "logout",
+      route: "/authentication/logout",
+      // icon: <SpaceShip size="12px" />,
+      component: Logout,
+      noCollapse: true,
+    },
         // {
     //   type: "collapse",
     //   name: "Dashboard",

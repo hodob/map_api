@@ -16,7 +16,7 @@ function Signup() {
     agreePrivacyPolicy: boolean;
     agreeDataProcessing: boolean;
   }
-  const Navigate = useNavigate();
+  const navigate = useNavigate();
   const [userid, setId] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -87,7 +87,7 @@ function Signup() {
       if (response.data && response.data.success === false) {
         return setError(response.data.msg);
       }
-      return Navigate("/authentication/login")
+      return navigate("/authentication/login")
     } catch (err:any) {
       console.log(err);
       if (err.response) {
