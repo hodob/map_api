@@ -42,7 +42,7 @@ class UserManager(BaseUserManager):
 
 class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(db_index=True, unique=True)
-    password = models.CharField(blank=True)
+    password = models.CharField(max_length=128, blank=True)
     name=models.CharField(max_length=128, blank=True)
     phone=models.CharField(max_length=128, blank=True)
     address=models.CharField(max_length=128, blank=True)
