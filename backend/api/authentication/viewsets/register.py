@@ -7,7 +7,7 @@ from rest_framework.permissions import AllowAny
 from api.user.models import Test
 
 class RegisterViewSet(viewsets.ModelViewSet):
-# class RegisterViewSet(viewsets.ViewSet):
+
     http_method_names = ["post"]
     permission_classes = (AllowAny,)
     
