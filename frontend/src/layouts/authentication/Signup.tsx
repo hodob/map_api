@@ -7,6 +7,8 @@ import { useNavigate } from "react-router-dom";
 
 
 
+
+
 function Signup() {
 
   interface TermsAgreements {
@@ -33,7 +35,7 @@ function Signup() {
   const [showTerms3, setShowTerms3] = useState(false);
 
   const [error, setError] = useState("undefined");
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e:  React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Handle form submission here
   };
@@ -57,7 +59,7 @@ function Signup() {
     setShowTerms3(!showTerms3);
   };
 
-  const register = async (event: any) => {
+  const register = async (event: React.MouseEvent<HTMLButtonElement> ) => {
     if (event) {
       event.preventDefault();
     }
@@ -81,12 +83,11 @@ function Signup() {
         agreeTerms,
         agreePrivacyPolicy,
         agreeDataProcessing,
-
       });
       if (response.data && response.data.success === false) {
         return setError(response.data.msg);
       }
-      return Navigate("/authentication/sign-in")
+      return Navigate("/authentication/login")
     } catch (err:any) {
       console.log(err);
       if (err.response) {

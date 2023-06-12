@@ -1,20 +1,28 @@
 import axiostool from "./axiostool";
+type data_login = {
+  password: string;
+  email: string;
+}
 
+type data_register = {
+  name: string;
+  password: string;
+  email: string;
+  phone: string;
+  address: string;
+  dob: string;
+  agreeTerms: Boolean;
+  agreePrivacyPolicy: Boolean;
+  agreeDataProcessing: Boolean;
+}
 class AuthApi {
 
-    //   static Login = (data) => {
-    //     return axios.post(`${base}/login`, data);
-    //   };
+      static Login = (data:data_login) => {
+        console.log(data);
+        return axiostool.post(`${base}/login`, data);
+      };
 
-    // static Register(data: any): any {
-    //     return axiostool.post("/register", data);
-    //     // return null;
-    // };
-      // public static Register(data:any){        
-      //   return axiostool.post(`${base}/register`, data)
-      // };
-
-      public static Register(data:any){        
+      public static Register(data:data_register){        
         return axiostool.post(`${base}/register`, data, )
       };
     //   static Logout = (data) => {
