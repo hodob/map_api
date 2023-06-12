@@ -2,6 +2,10 @@
 import React, { useState, ChangeEvent, FormEvent, useReducer, useContext, Dispatch } from 'react';
 import { Container, Form, Button, Collapse } from 'react-bootstrap';
 import AuthApi from '../../api/AuthApi';
+import { randomUUID } from 'crypto';
+import { useHistory } from "react-router-dom";
+
+
 
 function Signup() {
 
@@ -10,7 +14,7 @@ function Signup() {
     agreePrivacyPolicy: boolean;
     agreeDataProcessing: boolean;
   }
-
+  const history = useHistory();
   const [userid, setId] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -27,6 +31,8 @@ function Signup() {
   const [showTerms1, setShowTerms1] = useState(false);
   const [showTerms2, setShowTerms2] = useState(false);
   const [showTerms3, setShowTerms3] = useState(false);
+
+  const [error, setError] = useState("undefined");
   const handleSubmit = (e: any) => {
     e.preventDefault();
     // Handle form submission here
@@ -69,7 +75,6 @@ function Signup() {
 
       let response = await AuthApi.Register({
         password,
-        // confirmPassword,
         name,
         email,
         phone,
@@ -80,19 +85,22 @@ function Signup() {
         agreeDataProcessing,
 
       });
+      if (response.data && response.data.success === false) {
+        // setButtonText("Sign up");
+        return setError(response.data.msg);
+      }
 
       // if (response.data && response.data.success === false) {
       //   setButtonText("Sign up");
       //   return setError(response.data.msg);
       // }
-      // return history.push("/authentication/sign-in");
-    } catch (err) {
+      return history.push("/authentication/sign-in");
+    } catch (err:any) {
       console.log(err);
-      // setButtonText("Sign up");
-      // if (err.response) {
-      //   return setError(err.response.data.msg);
-      // }
-      // return setError("There has been an error.");
+      if (err.response) {
+        return setError(err.response.data.msg);
+      }
+      return setError("There has been an error.");
     }
   };
 
@@ -305,7 +313,9 @@ function Signup() {
         <Button
           variant="primary"
           onClick={register}
-          disabled={!agreeTerms || !agreePrivacyPolicy || !agreeDataProcessing}>
+          // disabled={!agreeTerms || !agreePrivacyPolicy || !agreeDataProcessing}
+          disabled={!agreeTerms || !agreePrivacyPolicy}
+          >
           Sign Up
         </Button>
       </Form>

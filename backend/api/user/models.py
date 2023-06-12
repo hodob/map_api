@@ -51,13 +51,13 @@ class User(AbstractBaseUser, PermissionsMixin):
     phone=models.CharField(max_length=128, blank=True)
     address=models.CharField(max_length=128, blank=True)
     dob=models.CharField(max_length=128, blank=True)
-    agreeTerms=models.CharField(max_length=128, blank=True)
-    agreePrivacyPolicy=models.CharField(max_length=128, blank=True)
-    agreeDataProcessing=models.CharField(max_length=128, blank=True)
+    agreeTerms=models.BooleanField(max_length=128 ,null=True,blank=True)
+    agreePrivacyPolicy=models.BooleanField(max_length=128 ,null=True,blank=True, default=True)
+    agreeDataProcessing=models.BooleanField(max_length=128,null=True,blank=True )
     is_active=models.BooleanField(max_length=128, default=True)
     is_admin=models.BooleanField(max_length=128, default=False)
     date_join=models.DateTimeField(auto_now_add=True)
-    last_login=models.DateTimeField(auto_now_add=True)
+    last_login=models.DateTimeField(null=True,blank=True)
     
 
     USERNAME_FIELD = "email"
