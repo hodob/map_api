@@ -16,7 +16,7 @@ function Logout() {
 
 
     const handleLogout = async () => {
-        // await AuthApi.Logout(user);
+        await AuthApi.Logout(user);
         await setUser(null);
         localStorage.removeItem("user");
         return navigate("/authentication/sign-in");

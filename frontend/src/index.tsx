@@ -4,14 +4,19 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
-
+import { AuthProvider } from "./auth-context/auth.context";
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
+let user:string | null = localStorage.getItem("user");
+user = JSON.parse(user || '{}');
 root.render(
   <React.StrictMode>
     <BrowserRouter>
+    <AuthProvider userData={user}>
         <App />
+      </AuthProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
