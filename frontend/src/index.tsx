@@ -7,20 +7,17 @@ import { BrowserRouter } from 'react-router-dom';
 import { AuthProvider } from "./auth-context/auth.context";
 
 
-
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
-let user:string | null = localStorage.getItem("user");
-user = JSON.parse(user || '{}');
-console.log("@@@@");
-console.log(user);
-console.log("@@@@");
+// let user = localStorage.getItem("user");
+let userdata = JSON.parse(localStorage.getItem("user") || '{}');
+
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-    <AuthProvider userData={user}>
+    <AuthProvider userData={userdata}>
         <App />
       </AuthProvider>
     </BrowserRouter>

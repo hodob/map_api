@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Form, Button } from 'react-bootstrap';
-import { useAuth } from '../../auth-context/auth.context';
+import { useAuth,useAuthSet } from '../../auth-context/auth.context';
 import AuthApi from '../../api/AuthApi';
 import { useNavigate } from "react-router-dom";
 
@@ -10,26 +10,19 @@ function Login() {
 
   const [error, setError] = useState("undefined");
   const navigate = useNavigate();
-  const setUser  = useAuth().setUser;
-  const user  = useAuth().user;
-  console.log(user);
-
+  const setUser  = useAuthSet();
+  const user  = useAuth();
 
   const handleEmailChange = (event:React.ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value);
   };
-
   const handlePasswordChange = (event:React.ChangeEvent<HTMLInputElement>) => {
     setPassword(event.target.value);
   };
-  console.log(typeof user);
-  console.log(typeof setUser);
-
   const login = async (event:React.MouseEvent<HTMLButtonElement>) => {
     if (event) {
       event.preventDefault();
     }
-
     if (user && user.token) {
       return navigate("/");
     }
@@ -47,9 +40,6 @@ function Login() {
       if (response.data && response.data.success === false) {
         return setError(response.data.msg);
       }
-
-      // console.log(response)
-      // 
       return setProfile(response);
     } catch (err:any) {
       console.log(err);
