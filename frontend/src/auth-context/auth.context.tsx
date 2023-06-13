@@ -11,7 +11,8 @@ const AuthContext = createContext< AuthContextValue | null>(null);
 
 export const AuthProvider= ({ userData, children }:{userData:string | null, children :React.ReactNode}) => {
   let [user, setUser] = useState(userData);
-  user = user ? JSON.parse(user) : user;
+  user = typeof user === "string" ? JSON.parse(user) : user;
+
 
   return <AuthContext.Provider value={{ user, setUser }}>{children}</AuthContext.Provider>;
 };

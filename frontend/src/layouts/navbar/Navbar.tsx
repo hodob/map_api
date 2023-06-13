@@ -13,7 +13,7 @@ function NavbarLayout() {
           <Nav className="me-auto">
             <Nav.Link href="/authentication/signup">회원가입</Nav.Link>
             <Nav.Link href="/authentication/login">로그인</Nav.Link>
-            <Nav.Link href="#link">로그아웃</Nav.Link>
+            <Nav.Link href="/authentication/logout">로그아웃</Nav.Link>
 
             {/* <NavDropdown title="Dropdownㅇㅇㅇ" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Actioㅇㅇn</NavDropdown.Item>

@@ -18,7 +18,6 @@ type data_register = {
 class AuthApi {
 
       static Login = (data:data_login) => {
-        console.log(data);
         return axiostool.post(`${base}/login`, data);
       };
 
