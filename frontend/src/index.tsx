@@ -14,6 +14,9 @@ const root = ReactDOM.createRoot(
 
 let user:string | null = localStorage.getItem("user");
 user = JSON.parse(user || '{}');
+console.log("@@@@");
+console.log(user);
+console.log("@@@@");
 root.render(
   <React.StrictMode>
     <BrowserRouter>

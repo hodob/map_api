@@ -1,13 +1,19 @@
 import React, { useState } from 'react';
 import { Container, Form, Button } from 'react-bootstrap';
-
+import { useAuth } from '../../auth-context/auth.context';
 import AuthApi from '../../api/AuthApi';
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const [error, setError] = useState("undefined");
+  const navigate = useNavigate();
+  const setUser  = useAuth().setUser;
+  const user  = useAuth().user;
+  console.log(user);
+
 
   const handleEmailChange = (event:React.ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value);
@@ -16,23 +22,23 @@ function Login() {
   const handlePasswordChange = (event:React.ChangeEvent<HTMLInputElement>) => {
     setPassword(event.target.value);
   };
-
+  console.log(typeof user);
+  console.log(typeof setUser);
 
   const login = async (event:React.MouseEvent<HTMLButtonElement>) => {
     if (event) {
       event.preventDefault();
     }
 
-    // if (user && user.token) {
-    //   return history.push("/dashboard");
-    // }
-    // if (email === "") {
-    //   return setError("You must enter your email.");
-    // }
-    // if (password === "") {
-    //   return setError("You must enter your password");
-    // }
-    // setButtonText("Signing in");
+    if (user && user.token) {
+      return navigate("/");
+    }
+    if (email === "") {
+      return setError("You must enter your email.");
+    }
+    if (password === "") {
+      return setError("You must enter your password");
+    }
     try {
       let response = await AuthApi.Login({
         email,
@@ -41,7 +47,10 @@ function Login() {
       if (response.data && response.data.success === false) {
         return setError(response.data.msg);
       }
-    //   return setProfile(response);
+
+      // console.log(response)
+      // 
+      return setProfile(response);
     } catch (err:any) {
       console.log(err);
     
@@ -51,8 +60,14 @@ function Login() {
       return setError("There has been an error.");
     }
   };
-
-
+  const setProfile = async (response:any) => {
+    let user = { ...response.data.user };
+    user.token = response.data.token;
+    user = JSON.stringify(user);
+    setUser(user);
+    localStorage.setItem("user", user);
+    return navigate("/");
+  };
 
 
   return (
