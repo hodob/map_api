@@ -15,6 +15,14 @@ type data_register = {
   agreePrivacyPolicy: Boolean;
   agreeDataProcessing: Boolean;
 }
+
+type user = {
+  email: string;
+  name: string;
+  token: string;
+  _id: string;
+  Prototype:Object
+}
 class AuthApi {
 
       static Login = (data:data_login) => {
@@ -24,7 +32,7 @@ class AuthApi {
       public static Register(data:data_register){        
         return axiostool.post(`${base}/register`, data, )
       };
-      static Logout = (data:any) => {
+      static Logout = (data:user) => {
         return axiostool.post(`${base}/logout`, data, { headers: { Authorization: `${data.token}` } });
       };
 }
