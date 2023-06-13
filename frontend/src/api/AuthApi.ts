@@ -25,9 +25,9 @@ class AuthApi {
       public static Register(data:data_register){        
         return axiostool.post(`${base}/register`, data, )
       };
-    //   static Logout = (data) => {
-    //     return axios.post(`${base}/logout`, data, { headers: { Authorization: `${data.token}` } });
-    //   };
+      static Logout = (data:any) => {
+        return axiostool.post(`${base}/logout`, data, { headers: { Authorization: `${data.token}` } });
+      };
 }
 
 let base = "users";
