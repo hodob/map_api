@@ -15,9 +15,13 @@ function Logout() {
 
     const navigate = useNavigate();
     
-    const { setUser }  = useAuth() as AuthContextValue;
-    let { user }  = useAuth() as AuthContextValue ;
-
+    // const { setUser }  = useAuth() as AuthContextValue;
+    // const setUser: (user: string | null) => void
+    const { setUser }:any = useAuth();
+    let { user }:any = useAuth() ;
+    console.log("타입확인")
+    console.log(typeof user);
+    console.log(typeof setUser);
 
     const handleLogout = async () => {
         await AuthApi.Logout(user);
