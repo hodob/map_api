@@ -1,19 +1,20 @@
 import React, {useState,createContext,useContext} from "react";
 
-type user = null|{
-  email: string;
-  name: string;
-  token: string;
-  _id: string;
+type user = {
+  email: string
+  name: string
+  token: string
+  _id: string
   Prototype:Object
-}
-type userset=null|React.Dispatch<React.SetStateAction<user>>
+};
 
-const AuthContext = createContext<user>(null);
-const AuthSetContext = createContext<userset>(null);
+type userset=React.Dispatch<React.SetStateAction<user|null>>
+
+const AuthContext = createContext<user|null>(null);
+const AuthSetContext = createContext<userset|null>(null);
 
 export const AuthProvider= ({ userData, children }:{userData:user, children :React.ReactNode}) => {
-  let [user, setUser] = useState(userData);
+  let [user, setUser] = useState<null|user>(userData);
   user = typeof user === "string" ? JSON.parse(user) : user;
   return (
     <AuthContext.Provider value={user}>
@@ -26,16 +27,12 @@ export const AuthProvider= ({ userData, children }:{userData:user, children :Rea
 
 // export const useAuth = () => useContext(AuthContext);
 export function useAuth(){
-  const context = useContext(AuthContext);
-  if(!context){
-    throw new Error('AuthContext not found');
-  }
-  return context;
+  const context1= useContext(AuthContext);
+  return context1;
 }
+
 export function useAuthSet(){
-  const context = useContext(AuthSetContext);
-  if(!context){
-    throw new Error('AuthSetContext not found');
+  const context2 = useContext(AuthSetContext);
+    return context2;
   }
-  return context;
-}
+

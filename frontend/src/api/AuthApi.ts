@@ -16,7 +16,7 @@ type data_register = {
   agreeDataProcessing: Boolean;
 }
 
-type user = {
+type user = null|{
   email: string;
   name: string;
   token: string;
@@ -36,6 +36,7 @@ class AuthApi {
       //   return axiostool.post(`${base}/logout`, data, { headers: { Authorization: `${data.token}` } });
       // };
       static Logout(data:user){
+        if(data == null) return;
         return axiostool.post(`${base}/logout`, data, { headers: { Authorization: `${data.token}` } });
       }
 

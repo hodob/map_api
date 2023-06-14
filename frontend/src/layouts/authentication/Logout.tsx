@@ -9,14 +9,16 @@ import { useAuth,useAuthSet } from '../../auth-context/auth.context';
 function Logout() {
 
     const navigate = useNavigate();
+    // TODO
     const setUser = useAuthSet();
-    let user  = useAuth();
+    let user = useAuth();
 
-    const handleLogout = async () => {
-        await AuthApi.Logout(user);
-        await setUser(null);
-        localStorage.removeItem("user");
-        return navigate("/authentication/sign-in");
+    const handleLogout = async() => {
+      await AuthApi.Logout(user);
+
+      await setUser?.(null);
+      localStorage.removeItem("user");
+      return navigate("/authentication/login");
       };
     
       useEffect(() => {

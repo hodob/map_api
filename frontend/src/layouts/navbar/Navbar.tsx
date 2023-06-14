@@ -2,8 +2,11 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 // import NavDropdown from 'react-bootstrap/NavDropdown';
+import { useAuth } from '../../auth-context/auth.context';
 
 function NavbarLayout() {
+  let user:any= useAuth()!;
+  if (!user){user="로그인해주세요"};
   return (
     <Navbar bg="light" expand="lg">
       <Container>
@@ -13,7 +16,7 @@ function NavbarLayout() {
           <Nav className="me-auto">
             <Nav.Link href="/authentication/signup">회원가입</Nav.Link>
             <Nav.Link href="/authentication/login">로그인</Nav.Link>
-            <Nav.Link href="/authentication/logout">로그아웃</Nav.Link>
+            <Nav.Link href="/authentication/logout">로그아웃{user.name}</Nav.Link>
 
             {/* <NavDropdown title="Dropdownㅇㅇㅇ" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Actioㅇㅇn</NavDropdown.Item>

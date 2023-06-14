@@ -8,12 +8,7 @@ from api.authentication.models.active_session import ActiveSession
 
 
 class ActiveSessionAuthentication(authentication.BaseAuthentication):
-    print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
-    print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
-    print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
-    print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
-    print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
-    print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+
     auth_error_message = {"success": False, "msg": "User is not logged on."}
 
     def authenticate(self, request):
