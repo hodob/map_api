@@ -33,18 +33,16 @@ class UserManager(BaseUserManager):
     #         raise TypeError("Superusers must have an email.")
     #     if username is None:
     #         raise TypeError("Superusers must have an username.")
-
+    #
     #     user = self.create_user(username, email, password)
     #     user.is_superuser = True
     #     user.is_staff = True
     #     user.save(using=self._db)
-
     #     return user
 
 
 class User(AbstractBaseUser, PermissionsMixin):
-#     # id=models.AutoField(primary_key=True)
-    
+
     email = models.EmailField(db_index=True, unique=True)
     password = models.CharField(max_length=128, blank=True)
     name=models.CharField(max_length=128, blank=True)
@@ -58,6 +56,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_admin=models.BooleanField(max_length=128, default=False)
     date_join=models.DateTimeField(auto_now_add=True)
     last_login=models.DateTimeField(null=True,blank=True)
+    is_staff=models.BooleanField(max_length=128, default=False)
+
     
 
     USERNAME_FIELD = "email"
