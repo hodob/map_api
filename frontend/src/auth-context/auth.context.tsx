@@ -25,7 +25,6 @@ export const AuthProvider= ({ userData, children }:{userData:user, children :Rea
     )
 };
 
-// export const useAuth = () => useContext(AuthContext);
 export function useAuth(){
   const context1= useContext(AuthContext);
   return context1;
