@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     "api.user",
     "api.authentication",
     "rest_framework_api_key",
+    "api.test",
 ]
 
 MIDDLEWARE = [

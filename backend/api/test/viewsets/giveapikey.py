@@ -9,6 +9,7 @@ from rest_framework_api_key.models import BaseAPIKeyManager
 from rest_framework_api_key.crypto import KeyGenerator
 
 from rest_framework_api_key.models import APIKey
+from api.test.model import UserAPIKey
 from datetime import datetime, timedelta
 
 
@@ -21,13 +22,13 @@ class GiveApiKey(viewsets.ModelViewSet):
     permission_classes = (IsAuthenticated,)
     def list(self, request, *args, **kwargs):
 
-        keys = APIKey.objects.all()
+        keys = UserAPIKey.objects.all()
         # for key in keys:
         #     if key.name == username:
         #         key.delete()
         #         break
         # # api_key, key = APIKey.objects.create_key(name=request.user.username)
-        api_key, key = APIKey.objects.create_key(name="지정호")
+        api_key, key = UserAPIKey.objects.create_key(name="지정호")
         expires = datetime.now() + timedelta(days=90)
         api_key.expiry_date = expires
         # api_key.save()
