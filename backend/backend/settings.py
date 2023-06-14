@@ -51,9 +51,9 @@ INSTALLED_APPS = [
     'corsheaders',
     'environ',
     'api',
+    "rest_framework_api_key",
     "api.user",
     "api.authentication",
-    "rest_framework_api_key",
     "api.test",
 ]
 
