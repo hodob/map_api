@@ -5,6 +5,6 @@ from api.user.models import User
 class UserAPIKey(AbstractAPIKey):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="apikey")
 
-    # class Meta(AbstractAPIKey.Meta):
-    #     ordering = ['user']
-    #     verbose_name = "User API key"
+    class Meta(AbstractAPIKey.Meta):
+        ordering = ['user']
+        verbose_name = "User API key"
