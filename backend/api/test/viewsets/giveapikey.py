@@ -26,19 +26,19 @@ class GiveApiKey(viewsets.ModelViewSet):
     def list(self, request, *args, **kwargs):
 
         keys = UserAPIKey.objects.all()
-        # for key in keys:
-        #     if key.name == username:
-        #         key.delete()
-        #         break
+        print(keys)
+        for key in keys:
+            print(key)
+            if key.user_id == 2:
+                key.delete()
+                break
         # # api_key, key = APIKey.objects.create_key(name=request.user.username)
-        api_key, key = UserAPIKey.objects.create_key(user_id=1,name='지정호')
+        api_key, key = UserAPIKey.objects.create_key(user_id=2,name='지정호')
         expires = datetime.now(tz=pytz.timezone('Asia/Seoul')) + timedelta(days=90)
         api_key.expiry_date = expires
         api_key.save()
         return Response({'apikey': key, 'expires': expires}, status=status.HTTP_200_OK)
         # return Response("test")
-
-
 
     # def create(self, request, *args, **kwargs):
     #     serializer = self.get_serializer(data=request.data)
