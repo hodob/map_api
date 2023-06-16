@@ -13,7 +13,6 @@ def _generate_jwt_token(user):
         {"id": user.pk, "exp": datetime.utcnow() + timedelta(days=7)},
         settings.SECRET_KEY,
     )
-
     return token
 
 

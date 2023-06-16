@@ -12,7 +12,7 @@ function Login() {
   const navigate = useNavigate();
   const setUser  = useAuthSet();
   const user  = useAuth();
-
+  
   const handleEmailChange = (event:React.ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value);
   };
@@ -20,19 +20,22 @@ function Login() {
     setPassword(event.target.value);
   };
   const login = async (event:React.MouseEvent<HTMLButtonElement>) => {
+    
     if (event) {
       event.preventDefault();
     }
     if (user && user.token) {
+
       return navigate("/");
     }
-    if (email === "") {
-      return setError("You must enter your email.");
-    }
-    if (password === "") {
-      return setError("You must enter your password");
-    }
+    // if (email === "") {
+    //   return setError("You must enter your email.");
+    // }
+    // if (password === "") {
+    //   return setError("You must enter your password");
+    // }
     try {
+      
       let response = await AuthApi.Login({
         email,
         password,
@@ -54,6 +57,7 @@ function Login() {
     let user = { ...response.data.user };
     user.token = response.data.token;
     user = JSON.stringify(user);
+    console.log("user >>", user);
     setUser?.(user);
     localStorage.setItem("user", user);
     return navigate("/");

@@ -6,6 +6,7 @@ import { useAuth } from '../../auth-context/auth.context';
 
 function NavbarLayout() {
   let user:any= useAuth()!;
+
   if (!user){user="로그인해주세요"};
   return (
     <Navbar bg="light" expand="lg">

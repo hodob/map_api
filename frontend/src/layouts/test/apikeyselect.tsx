@@ -7,7 +7,7 @@ export default function Apikeyselect() {
     let user = useAuth();
     const TestApiCall = async () => {
         try {
-            const response = await Axios.get('http://localhost:8000/api/test/giveapikey', { headers: { Authorization: `${user?.token}` }});
+            const response = await Axios.get('http://localhost:8000/api/test/giveapikey?apikey=test', { headers: { Authorization: `${user?.token}` }});
             console.log("response >>", response);
         } catch(err) {
             console.log("Error >>", err);

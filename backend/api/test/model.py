@@ -3,8 +3,9 @@ from django.contrib.auth import get_user_model
 from rest_framework_api_key.models import AbstractAPIKey
 from api.user.models import User
 class UserAPIKey(AbstractAPIKey):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="apikey")
-
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="apikey",null=False)
+    # user = models.ForeignKey(User, on_delete=models.CASCADE)
+    # OneToOneField
     class Meta(AbstractAPIKey.Meta):
-        ordering = ['user']
+        # ordering = ['user']
         verbose_name = "User API key"

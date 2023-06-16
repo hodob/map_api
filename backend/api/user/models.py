@@ -5,8 +5,11 @@ from django.contrib.auth.models import (
     BaseUserManager,
     PermissionsMixin,
 )
+from rest_framework_api_key.models import BaseAPIKeyManager
 
-
+class UserAPIKeyManager(BaseAPIKeyManager):
+    def get_usable_keys(self) -> models.QuerySet:
+        return super().get_usable_keys().filter(user__retired=False)
 
 
 class UserManager(BaseUserManager):
@@ -58,7 +61,6 @@ class User(AbstractBaseUser, PermissionsMixin):
     last_login=models.DateTimeField(null=True,blank=True)
     is_staff=models.BooleanField(max_length=128, default=False)
 
-    
 
     USERNAME_FIELD = "email"
     # REQUIRED_FIELDS = ["username"]
