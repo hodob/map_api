@@ -5,7 +5,7 @@ from rest_framework import routers
 router = routers.SimpleRouter(trailing_slash=False)
 
 router.register(r"giveapikey", GiveApiKey, basename="giveapikey")
-router.register(r"testapikey", GiveApiKey, basename="testapikey")
+router.register(r"testapikey", TestApiKey, basename="testapikey")
 
 
 

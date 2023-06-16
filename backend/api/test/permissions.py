@@ -2,9 +2,10 @@ from rest_framework_api_key.permissions import BaseHasAPIKey
 
 from api.test.model import UserAPIKey
 
-# class KeyParser:
-#     def get(self, request):
-#         return request.GET['apikey']
+class KeyParser:
+    def get(self, request):
+        print("KeyPaser + get")
+        return request.GET['apikey']
 class HasUserAPIKey(BaseHasAPIKey):
     model = UserAPIKey
-    # key_parser = KeyParser()
+    key_parser = KeyParser()

@@ -7,6 +7,7 @@ export default function Apikeyselect() {
     let user = useAuth();
     const [apikey, setApikey] = useState<string>("");
     const [apikey2, setApikey2] = useState<string>("");
+    const [testresult, setTestResult] = useState<string>("");
 
     // const [value, setValue] = useState<string>("");
 
@@ -28,8 +29,10 @@ export default function Apikeyselect() {
         try {
             const response = await Axios.get('http://localhost:8000/api/test/testapikey?apikey='+apikey2, { headers: { Authorization: `${user?.token}` }});
             console.log("response >>", response);
-            setApikey(response.data.apikey);
+            setTestResult(response.data);
+
         } catch(err) {
+            setTestResult("테스트 실패");
             console.log("Error >>", err);
         }
     }
@@ -41,11 +44,12 @@ export default function Apikeyselect() {
             <h1>api키 : {apikey}</h1>
 
             <div>
-            <input type="text" value={apikey2} onChange={hangapikeychange} />
+            <input type="text" value={apikey2} onChange={hangapikeychange} width="400"/>
             <p>입력된 값: {apikey2}</p>
+            <h3>접근주소: http://localhost:8000/api/test/testapikey?apikey={apikey2}</h3>
             </div>
             <button onClick={TestApiCall}>apiKey테스트</button>
-
+            <h1>테스트결과 : {testresult}</h1>
         </div>
     )
 }

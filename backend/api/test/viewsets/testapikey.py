@@ -13,13 +13,9 @@ import pytz
 from api.user.models import UserAPIKeyManager
 
 
-# class OrganizationAPIKeyManager(BaseAPIKeyManager):
-# class OrganizationAPIKeyManager(UserAPIKeyManager):
-#     key_generator = KeyGenerator(prefix_length=4, secret_key_length=32)  # Default values
-
 class TestApiKey(viewsets.ModelViewSet):
 
     permission_classes = (IsAuthenticated,HasUserAPIKey,)
     def list(self, request, *args, **kwargs):
 
-        return Response("test")
+        return Response("접근허가")
