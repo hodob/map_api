@@ -18,7 +18,7 @@ function NavbarLayout() {
             <Nav.Link href="/authentication/signup">회원가입</Nav.Link>
             <Nav.Link href="/authentication/login">로그인</Nav.Link>
             <Nav.Link href="/authentication/logout">로그아웃{user.name}</Nav.Link>
-            <Nav.Link href="/test/apikeyselect">apikey 확인</Nav.Link>
+            <Nav.Link href="/test/apikeyselect">apikey 확인(test)</Nav.Link>
             <Nav.Link href="/">apikey 테스트</Nav.Link>
 
             {/* <NavDropdown title="Dropdownㅇㅇㅇ" id="basic-nav-dropdown">
