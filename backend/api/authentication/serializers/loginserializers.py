@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist
 
-# from api.authentication.models.active_session import ActiveSession
+# from api.authentication.models.active_session import ActiveSession 
 from api.authentication.models.active_session import ActiveSession
 
 def _generate_jwt_token(user):
