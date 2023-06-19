@@ -4,7 +4,7 @@ from api.test.model import UserAPIKey
 
 class KeyParser:
     def get(self, request):
-        print("KeyPaser + get")
+
         return request.GET['apikey']
 class HasUserAPIKey(BaseHasAPIKey):
     model = UserAPIKey
