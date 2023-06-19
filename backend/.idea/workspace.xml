@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35b0bcbe-1c60-4dd4-b2d5-b3506cd361fd" name="Changes" comment="모델설정 완료" />
+    <list default="true" id="35b0bcbe-1c60-4dd4-b2d5-b3506cd361fd" name="Changes" comment="모델설정 완료">
+      <change afterPath="$PROJECT_DIR$/user/routers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/viewsets/TestViewSet.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/viewsets/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/viewsets/account.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/viewsets/login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/authentication/viewsets/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/authentication/viewsets/login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/urls.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,33 +43,36 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/dats/Documents/dev/python/dats/map_api/backend/api/apikey"
+    "last_opened_file_path": "/Users/dats/Documents/dev/python/dats/map_api/backend/user/viewsets"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/user/viewsets" />
+      <recent name="$PROJECT_DIR$/api/user" />
+      <recent name="$PROJECT_DIR$/user" />
       <recent name="$PROJECT_DIR$/api/apikey" />
       <recent name="$PROJECT_DIR$/api/test/viewsets" />
-      <recent name="$PROJECT_DIR$/api/test" />
-      <recent name="$PROJECT_DIR$/api" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/user" />
       <recent name="$PROJECT_DIR$/api/apikey" />
       <recent name="$PROJECT_DIR$/api/user" />
       <recent name="$PROJECT_DIR$/api/apikey/viewsets" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="routers" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+    <configuration name="runserver" type="PythonConfigurationType" factoryName="Python">
       <module name="backend" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="$PROJECT_DIR$/.venv/bin/python" />
+      <option name="SDK_NAME" value="Python 3.11 (backend)" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
