@@ -44,7 +44,7 @@ export default function Apikeyselect() {
             <h1>api키 : {apikey}</h1>
 
             <div>
-            <input type="text" value={apikey2} onChange={hangapikeychange} width="400"/>
+            <input  type="text" value={apikey2} onChange={hangapikeychange} />
             <p>입력된 값: {apikey2}</p>
             <h3>접근주소: http://localhost:8000/api/test/testapikey?apikey={apikey2}</h3>
             </div>

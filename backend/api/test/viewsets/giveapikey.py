@@ -15,7 +15,6 @@ from datetime import datetime, timedelta
 import pytz
 from api.user.models import UserAPIKeyManager
 
-
 # class OrganizationAPIKeyManager(BaseAPIKeyManager):
 # class OrganizationAPIKeyManager(UserAPIKeyManager):
 #     key_generator = KeyGenerator(prefix_length=4, secret_key_length=32)  # Default values
@@ -26,14 +25,12 @@ class GiveApiKey(viewsets.ModelViewSet):
     def list(self, request, *args, **kwargs):
 
         keys = UserAPIKey.objects.all()
-        print(keys)
         for key in keys:
-            print(key)
-            if key.user_id == 2:
+            if key.user_id == self.request.user.id:
                 key.delete()
                 break
         # # api_key, key = APIKey.objects.create_key(name=request.user.username)
-        api_key, key = UserAPIKey.objects.create_key(user_id=2,name='지정호')
+        api_key, key = UserAPIKey.objects.create_key(user_id=self.request.user.id, name=self.request.user.name)
         expires = datetime.now(tz=pytz.timezone('Asia/Seoul')) + timedelta(days=90)
         api_key.expiry_date = expires
         api_key.save()
