@@ -5,8 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="35b0bcbe-1c60-4dd4-b2d5-b3506cd361fd" name="Changes" comment="모델설정 완료">
+      <change afterPath="$PROJECT_DIR$/api/apikey/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/apikey/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/apikey/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/apikey/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/test/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/test/model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/test/permissions.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/test/permissions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/test/viewsets/giveapikey.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/test/viewsets/giveapikey.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/test/viewsets/testapikey.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/test/viewsets/testapikey.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/user/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/user/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,22 +40,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/dats/Documents/dev/python/dats/map_api/backend/api/test/viewsets&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/dats/Documents/dev/python/dats/map_api/backend/api/apikey"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/api/apikey" />
       <recent name="$PROJECT_DIR$/api/test/viewsets" />
       <recent name="$PROJECT_DIR$/api/test" />
       <recent name="$PROJECT_DIR$/api" />
-      <recent name="$PROJECT_DIR$/api/apikey" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/api/apikey" />
       <recent name="$PROJECT_DIR$/api/user" />
       <recent name="$PROJECT_DIR$/api/apikey/viewsets" />
     </key>

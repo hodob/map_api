@@ -1,19 +1,7 @@
 from rest_framework import viewsets, status
 from rest_framework.response import Response
-from rest_framework.permissions import AllowAny
 from rest_framework.permissions import IsAuthenticated
-from ..permissions import HasUserAPIKey
-from api.authentication.serializers.registerserializers import RegisterSerializer
-
-from api.user.models import Test
-from rest_framework_api_key.models import BaseAPIKeyManager
-from rest_framework_api_key.crypto import KeyGenerator
-
-from rest_framework_api_key.models import APIKey
-from api.test.model import UserAPIKey
-from datetime import datetime, timedelta
-import pytz
-from api.user.models import UserAPIKeyManager
+# from api.test.model import UserAPIKey
 
 # class OrganizationAPIKeyManager(BaseAPIKeyManager):
 # class OrganizationAPIKeyManager(UserAPIKeyManager):
