@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="35b0bcbe-1c60-4dd4-b2d5-b3506cd361fd" name="Changes" comment="모델설정 완료">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/test/permissions.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/test/permissions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/test/viewsets/giveapikey.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/test/viewsets/giveapikey.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/test/viewsets/testapikey.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/test/viewsets/testapikey.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
