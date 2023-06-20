@@ -1,21 +1,28 @@
 
 from django.shortcuts import get_object_or_404
 from rest_framework import viewsets
-from rest_framework.permissions import AllowAny
+from rest_framework.permissions import AllowAny, IsAuthenticated
+
 from rest_framework.response import Response
 from django.urls import resolve
 
+from api.authentication.models.active_session import ActiveSession
+from api.authentication.serializers.registerserializers import RegisterSerializer
+
 
 class AccountViewSet(viewsets.ViewSet):
-
+    serializer_class = RegisterSerializer
     def list(self, request):
-
+        permission_classes = (IsAuthenticated,)
         # HTTP GET 요청에 대한 처리를 담당합니다.
         # 모든 사용자를 조회하여 리스트 형태로 반환하거나, 사용자 목록에 대한 필터링 또는 정렬을 수행할 수 있습니다.
         return Response("test")
 
     def create(self, request):
-        # permission_classes = (AllowAny,)
+        permission_classes = (AllowAny,)
+        user = request.user
+        session = ActiveSession.objects.get(user=user)
+        session.delete()
         # HTTP POST 요청에 대한 처리를 담당합니다.
         # 새로운 사용자를 생성하기 위해 요청으로부터 받은 데이터를 사용하여 새로운 사용자를 만듭니다.
         return Response("test2")
