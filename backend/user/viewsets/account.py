@@ -1,17 +1,13 @@
 
 from django.shortcuts import get_object_or_404
 from rest_framework import viewsets
+from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
-
-from api.user.models import User
 from django.urls import resolve
 
 
-class TestViewSet(viewsets.ViewSet):
+class AccountViewSet(viewsets.ViewSet):
 
-    """
-    A simple ViewSet for listing or retrieving users.
-    """
     def list(self, request):
 
         # HTTP GET 요청에 대한 처리를 담당합니다.
@@ -19,10 +15,11 @@ class TestViewSet(viewsets.ViewSet):
         return Response("test")
 
     def create(self, request):
+        # permission_classes = (AllowAny,)
         # HTTP POST 요청에 대한 처리를 담당합니다.
         # 새로운 사용자를 생성하기 위해 요청으로부터 받은 데이터를 사용하여 새로운 사용자를 만듭니다.
+        return Response("test2")
         pass
-
     def retrieve(self, request, pk=None):
         # HTTP GET 요청에 대한 처리를 담당합니다.
         # 특정 사용자를 조회하기 위해 요청에서 전달된 고유 식별자(primary key)를 사용하여 해당 사용자의 상세 정보를 반환합니다.

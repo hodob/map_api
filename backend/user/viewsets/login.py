@@ -6,12 +6,10 @@ from rest_framework.response import Response
 
 from api.authentication.serializers.loginserializers import LoginSerializer
 from api.user.models import User
-from django.urls import resolve
 
-
-class TestViewSet(viewsets.ViewSet):
+class LoginViewSet(viewsets.ViewSet):
     permission_classes = (AllowAny,)
-    serializer_class = LoginSerializer
+    # serializer_class = LoginSerializer
     """
     A simple ViewSet for listing or retrieving users.
     """
@@ -19,7 +17,7 @@ class TestViewSet(viewsets.ViewSet):
 
         # HTTP GET 요청에 대한 처리를 담당합니다.
         # 모든 사용자를 조회하여 리스트 형태로 반환하거나, 사용자 목록에 대한 필터링 또는 정렬을 수행할 수 있습니다.
-        return Response("test")
+        return Response("test2")
 
     def create(self, request):
         # HTTP POST 요청에 대한 처리를 담당합니다.
@@ -45,3 +43,5 @@ class TestViewSet(viewsets.ViewSet):
         # HTTP DELETE 요청에 대한 처리를 담당합니다.
         # 특정 사용자를 삭제하기 위해 요청에서 전달된 고유 식별자(primary key)를 사용하여 해당 사용자를 삭제합니다.
         pass
+
+
