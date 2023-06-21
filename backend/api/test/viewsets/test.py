@@ -1,5 +1,3 @@
-from rest_framework_api_key.models import BaseAPIKeyManager
-from rest_framework_api_key.crypto import KeyGenerator
 from rest_framework import viewsets, mixins
 from rest_framework.response import Response
 from rest_framework import status

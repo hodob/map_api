@@ -22,8 +22,8 @@ from api.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('user/',include('user.routers')),
-    path('api/users/', include("api.user.routers")),
+    path('api/users/',include('user.routers')),
+    # path('api/users/', include("api.user.routers")),
     path('api/test2/', test.as_view()),
     path('api/test/', include("api.test.routers")),
     

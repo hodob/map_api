@@ -7,8 +7,6 @@ import { useNavigate } from "react-router-dom";
 
 
 
-
-
 function Signup() {
 
   interface TermsAgreements {
@@ -17,7 +15,6 @@ function Signup() {
     agreeDataProcessing: boolean;
   }
   const navigate = useNavigate();
-  const [userid, setId] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [name, setName] = useState('');
@@ -33,6 +30,21 @@ function Signup() {
   const [showTerms1, setShowTerms1] = useState(false);
   const [showTerms2, setShowTerms2] = useState(false);
   const [showTerms3, setShowTerms3] = useState(false);
+
+  function test(){
+    setPassword("wjdh7578@")
+    setName("지정호")
+    setEmail("hodob76@gmail.com")
+    setPhone("01030347578")
+    setAddress("테스트 주소")
+    setTermsAgreements({
+      agreeTerms: true,
+      agreePrivacyPolicy: true,
+      agreeDataProcessing: true,
+    })
+  }
+
+
 
   const [error, setError] = useState("undefined");
   const handleSubmit = (e:  React.FormEvent<HTMLFormElement>) => {
@@ -300,6 +312,12 @@ function Signup() {
           disabled={!agreeTerms || !agreePrivacyPolicy}
           >
           Sign Up
+        </Button>
+        <Button
+          variant="primary"
+          onClick={test}
+          >
+          test
         </Button>
       </Form>
     </Container>

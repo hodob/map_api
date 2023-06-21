@@ -2,9 +2,6 @@
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-
-
-
 #  단순 숫자만 바꾸는거
 class test(APIView):
     def get(self, request, format=None):
