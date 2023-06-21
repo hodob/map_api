@@ -14,7 +14,7 @@ from pathlib import Path
 import os, environ
 env = environ.Env(
     # set casting, default value
-    DEBUG=(bool, False)
+    DEBUG=(bool, True)
 )
 
 
@@ -52,7 +52,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'environ',
     'api',
-    "rest_framework_api_key",
+    # "rest_framework_api_key",
     "api.user",
     "api.authentication",
     "api.test",
@@ -165,7 +165,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AUTH_USER_MODEL = "api_user.User"
+AUTH_USER_MODEL = "user.User"
 
 
 # LOGGING = {

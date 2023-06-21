@@ -1,13 +1,6 @@
-asgiref
 Django
 django-cors-headers
 django-environ
 djangorestframework
-
-psycopg2-binary
-Pygments
-pytz
-sqlparse
-typing_extensions
+psycopg2
 PyJWT
-djangorestframework-api-key==2.*

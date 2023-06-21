@@ -4,7 +4,6 @@ from rest_framework.permissions import AllowAny
 
 from api.authentication.serializers.registerserializers import RegisterSerializer
 
-from api.user.models import Test
 
 class RegisterViewSet(viewsets.ModelViewSet):
 

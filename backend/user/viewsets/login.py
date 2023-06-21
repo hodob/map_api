@@ -5,7 +5,7 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 
 from api.authentication.serializers.loginserializers import LoginSerializer
-from api.user.models import User
+
 
 class LoginViewSet(viewsets.ViewSet):
     permission_classes = (AllowAny,)
