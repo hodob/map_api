@@ -51,9 +51,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'environ',
-    'api',
-    # "rest_framework_api_key",
-    "api.user",
     'user.apps.UserConfig',
 ]
 
