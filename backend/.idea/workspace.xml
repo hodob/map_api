@@ -4,18 +4,41 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35b0bcbe-1c60-4dd4-b2d5-b3506cd361fd" name="Changes" comment="다시 시작">
-      <change afterPath="$PROJECT_DIR$/user/serializers/customuserserializers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/viewsets/register.py" afterDir="false" />
+    <list default="true" id="35b0bcbe-1c60-4dd4-b2d5-b3506cd361fd" name="Changes" comment="회원가입됨">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/authentication/serializers/registerserializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/authentication/serializers/registerserializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/authentication/viewsets/register.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/test/viewsets/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/test/viewsets/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/apikey/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/apikey/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/apikey/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/viewsets/logout.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/apikey/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/authentication/backends.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/activeSessionAuthentication.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/authentication/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/authentication/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/authentication/models/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/authentication/models/active_session.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/authentication/serializers/loginserializers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/authentication/serializers/registerserializers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/authentication/viewsets/login.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/authentication/viewsets/logout.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/test/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/test/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/test/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/test/migrations/0002_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/test/migrations/0003_delete_userapikey.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/test/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/test/model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/test/permissions.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/test/routers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/test/viewsets/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/test/viewsets/giveapikey.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/test/viewsets/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/test/viewsets/testapikey.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/user/routers.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/user/routers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/routers.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/routers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/serializers/registerserializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/serializers/registerserializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/serializers/customuserserializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/serializers/customuserserializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/serializers/loginserializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/serializers/loginserializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/viewsets/account.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/viewsets/account.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/viewsets/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/viewsets/login.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/layouts/authentication/Signup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/layouts/authentication/Signup.tsx" afterDir="false" />
@@ -49,7 +72,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/dats/Documents/map_api/backend/user/serializers",
+    "last_opened_file_path": "C:/Users/dats/Documents/map_api/backend/user/models",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
@@ -63,17 +86,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dats\Documents\map_api\backend\user\models" />
+      <recent name="C:\Users\dats\Documents\map_api\backend\user\src" />
       <recent name="C:\Users\dats\Documents\map_api\backend\user\serializers" />
       <recent name="C:\Users\dats\Documents\map_api\backend\user" />
       <recent name="$PROJECT_DIR$/user/viewsets" />
-      <recent name="$PROJECT_DIR$/api/user" />
-      <recent name="$PROJECT_DIR$/user" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\dats\Documents\map_api\backend\user" />
+      <recent name="C:\Users\dats\Documents\map_api\backend\user\models" />
       <recent name="$PROJECT_DIR$/user" />
       <recent name="$PROJECT_DIR$/api/apikey" />
       <recent name="$PROJECT_DIR$/api/user" />
-      <recent name="$PROJECT_DIR$/api/apikey/viewsets" />
     </key>
   </component>
   <component name="RunManager" selected="Python.runserver">
@@ -178,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687323331951</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="회원가입됨">
+      <created>1687328138670</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1687328138670</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -195,6 +226,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="모델설정 완료" />
     <MESSAGE value="다시 시작" />
-    <option name="LAST_COMMIT_MESSAGE" value="다시 시작" />
+    <MESSAGE value="회원가입됨" />
+    <option name="LAST_COMMIT_MESSAGE" value="회원가입됨" />
   </component>
 </project>

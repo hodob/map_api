@@ -4,8 +4,8 @@ from rest_framework import authentication, exceptions
 from django.conf import settings
 
 
-from api.authentication.models.active_session import ActiveSession
-from user.models import User
+
+from user.models import User, ActiveSession
 
 
 class ActiveSessionAuthentication(authentication.BaseAuthentication):

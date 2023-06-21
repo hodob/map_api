@@ -54,8 +54,6 @@ INSTALLED_APPS = [
     'api',
     # "rest_framework_api_key",
     "api.user",
-    "api.authentication",
-    "api.test",
     'user.apps.UserConfig',
 ]
 
@@ -167,7 +165,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = "user.User"
 
-
 # LOGGING = {
 #     "version": 1,
 #     "root": {
@@ -177,7 +174,7 @@ AUTH_USER_MODEL = "user.User"
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
-        "api.authentication.backends.ActiveSessionAuthentication",
+        "user.src.activeSessionAuthentication.ActiveSessionAuthentication",
     ),
     "DEFAULT_RENDERER_CLASSES": ("rest_framework.renderers.JSONRenderer",),
 }

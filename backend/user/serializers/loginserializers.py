@@ -5,8 +5,8 @@ from datetime import datetime, timedelta
 from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist
 
-# from api.authentication.models.active_session import ActiveSession 
-from api.authentication.models.active_session import ActiveSession
+from user.models import ActiveSession
+
 
 def _generate_jwt_token(user):
     token = jwt.encode(
@@ -14,7 +14,6 @@ def _generate_jwt_token(user):
         settings.SECRET_KEY,
     )
     return token
-
 
 class LoginSerializer(serializers.Serializer):
     email = serializers.CharField(max_length=255)

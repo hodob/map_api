@@ -6,8 +6,8 @@ from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from django.urls import resolve
 
-from api.authentication.models.active_session import ActiveSession
-from user.serializers.customuserserializers import UserSerializer
+
+
 
 
 class AccountViewSet(viewsets.ViewSet):

@@ -32,7 +32,7 @@ function Signup() {
   const [showTerms3, setShowTerms3] = useState(false);
 
   function test(){
-    setPassword("wjdh7578@")
+    setPassword("wjdgh7578@")
     setName("지정호")
     setEmail("hodob76@gmail.com")
     setPhone("01030347578")

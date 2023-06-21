@@ -1,6 +1,4 @@
-from api.authentication.viewsets.register import RegisterViewSet
-from api.authentication.viewsets.login import LoginViewSet
-from api.authentication.viewsets.logout import LogoutViewSet
+
 from rest_framework import routers
 
 router = routers.SimpleRouter(trailing_slash=False)
