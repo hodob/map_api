@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35b0bcbe-1c60-4dd4-b2d5-b3506cd361fd" name="Changes" comment="정리완">
+    <list default="true" id="35b0bcbe-1c60-4dd4-b2d5-b3506cd361fd" name="Changes" comment="암호화 견본완">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/src/encrypt_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/encrypt_utils.py" afterDir="false" />
     </list>
@@ -215,7 +215,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687330656507</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="암호화 견본완">
+      <created>1687397392609</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1687397392609</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -235,6 +242,7 @@
     <MESSAGE value="회원가입됨" />
     <MESSAGE value="정리중" />
     <MESSAGE value="정리완" />
-    <option name="LAST_COMMIT_MESSAGE" value="정리완" />
+    <MESSAGE value="암호화 견본완" />
+    <option name="LAST_COMMIT_MESSAGE" value="암호화 견본완" />
   </component>
 </project>

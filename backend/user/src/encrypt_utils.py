@@ -1,31 +1,21 @@
 from Crypto.Util.Padding import pad, unpad
 from Crypto.Cipher import AES
-import base64
+import base64,environ
 
-#padding 설정
-BS = 16
+class EncryptUtils:
 
-#변수 설정
-key = 'testkey'
-ori = 'test@doru.com'
-print('ori',ori)
+    env = environ.Env()
+    key = env('KEY')
+    BS = 16
+    cipher = AES.new(pad(key.encode(), BS), AES.MODE_ECB)
+    def encrypt(self, raw: str):
+        encrypted = self.cipher.encrypt(pad(raw.encode(), self.BS))
+        return base64.b64encode(encrypted)
 
-#암호화
-cipher = AES.new(pad(key.encode(), BS), AES.MODE_ECB)
-msg = cipher.encrypt(pad(ori.encode(), BS))
-print('msg',msg)
-m2 = base64.b64encode(msg)
-print('base64',m2)
+    def decrypt(self, base64decode):
+        decrypted=base64.b64decode(base64decode)
+        return unpad(self.cipher.decrypt(decrypted))
 
-m3 = base64.b64decode(m2)
-print(m3)
-
-m4 = cipher.decrypt(m3)
-print(m4)
-
-m5 = unpad(m4,BS)
-
-print(m5)
 
 # from Crypto.Cipher import AES
 # from Crypto import Random
