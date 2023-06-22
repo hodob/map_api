@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35b0bcbe-1c60-4dd4-b2d5-b3506cd361fd" name="Changes" comment="로직은 구현 시험해야힘">
+    <list default="true" id="35b0bcbe-1c60-4dd4-b2d5-b3506cd361fd" name="Changes" comment="엡 추가">
+      <change afterPath="$PROJECT_DIR$/user/src/userEnum.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/src/encrypt_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/encrypt_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/viewsets/TestViewSet.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/viewsets/TestViewSet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -230,7 +231,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687398918583</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="엡 추가">
+      <created>1687405836127</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1687405836127</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -252,6 +260,7 @@
     <MESSAGE value="정리완" />
     <MESSAGE value="암호화 견본완" />
     <MESSAGE value="로직은 구현 시험해야힘" />
-    <option name="LAST_COMMIT_MESSAGE" value="로직은 구현 시험해야힘" />
+    <MESSAGE value="엡 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="엡 추가" />
   </component>
 </project>

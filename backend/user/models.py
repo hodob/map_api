@@ -1,6 +1,11 @@
+from datetime import timezone
+from enum import Enum
+
 from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
 from django.contrib.auth.models import PermissionsMixin
 from django.db import models
+
+from user.src.userEnum import ApiKeyCategory
 
 
 # Create your models here.
@@ -42,4 +47,21 @@ class ActiveSession(models.Model):
     date = models.DateTimeField(auto_now_add=True)
 
 
+
+class UserAPIKey(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    key = models.CharField(max_length=255, unique=True)
+    is_active = models.BooleanField(default=True)
+    expiration_date = models.DateField()
+    category = models.CharField(max_length=20, choices=[(status.value, status.value) for status in ApiKeyCategory])
+
+    def __str__(self):
+        return self.key
+
+    def is_expired(self):
+        return self.expiration_date < timezone.now().date()
+
+    def deactivate(self):
+        self.is_active = False
+        self.save()
 

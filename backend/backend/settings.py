@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'environ',
     'user.apps.UserConfig',
+    'apidata.apps.ApidataConfig',
 ]
 
 MIDDLEWARE = [
