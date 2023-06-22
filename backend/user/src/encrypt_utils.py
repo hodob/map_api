@@ -7,14 +7,16 @@ class EncryptUtils:
     env = environ.Env()
     key = env('KEY')
     BS = 16
-    cipher = AES.new(pad(key.encode(), BS), AES.MODE_ECB)
+    def __init__(self):
+        self.cipher = AES.new(pad(self.key.encode(), self.BS), AES.MODE_ECB)
+
     def encrypt(self, raw: str):
-        encrypted = self.cipher.encrypt(pad(raw.encode(), self.BS))
-        return base64.b64encode(encrypted)
+        encrypted =self.cipher.encrypt(pad(raw.encode(), self.BS))
+        return base64.b64encode(encrypted).decode()
 
     def decrypt(self, base64decode):
         decrypted=base64.b64decode(base64decode)
-        return unpad(self.cipher.decrypt(decrypted))
+        return unpad(self.cipher.decrypt(decrypted),self.BS).decode()
 
 
 # from Crypto.Cipher import AES

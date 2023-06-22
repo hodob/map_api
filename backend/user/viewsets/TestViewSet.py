@@ -4,6 +4,8 @@ from rest_framework import viewsets
 from rest_framework.response import Response
 from django.urls import resolve
 
+from user.src.encrypt_utils import EncryptUtils
+
 
 class TestViewSet(viewsets.ViewSet):
 
@@ -11,9 +13,13 @@ class TestViewSet(viewsets.ViewSet):
     A simple ViewSet for listing or retrieving users.
     """
     def list(self, request):
+        encrypt = EncryptUtils()
+        m1 = encrypt.encrypt("test")
+        print(m1)
+        m2 = encrypt.decrypt(m1)
+        print(m2)
+        return Response(m2)
 
-        # HTTP GET 요청에 대한 처리를 담당합니다.
-        # 모든 사용자를 조회하여 리스트 형태로 반환하거나, 사용자 목록에 대한 필터링 또는 정렬을 수행할 수 있습니다.
         pass
 
     def create(self, request):
