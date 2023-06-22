@@ -17,6 +17,16 @@ print('msg',msg)
 m2 = base64.b64encode(msg)
 print('base64',m2)
 
+m3 = base64.b64decode(m2)
+print(m3)
+
+m4 = cipher.decrypt(m3)
+print(m4)
+
+m5 = unpad(m4,BS)
+
+print(m5)
+
 # from Crypto.Cipher import AES
 # from Crypto import Random
 # from Crypto.Protocol.KDF import PBKDF2
