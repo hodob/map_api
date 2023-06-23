@@ -13,3 +13,10 @@ class UserAPIKeySerializers(serializers.Serializer):
     def validate(self, data):
         email = data.get("email", None)
         user = authenticate(username=email)
+
+
+        return {
+            "success": True,
+            # "token": session.token,
+            # "user": {"_id": user.pk, "name": user.name, "email": user.email},
+        }
