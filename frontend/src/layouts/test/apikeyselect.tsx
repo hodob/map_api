@@ -16,7 +16,7 @@ export default function Apikeyselect() {
     };
     const CreateApiCall = async () => {
         try {
-            const response = await Axios.get('http://localhost:8000/api/test/giveapikey', { headers: { Authorization: `${user?.token}` }});
+            const response = await Axios.get('http://localhost:8000/api/users/apis', { headers: { Authorization: `${user?.token}` }});
             console.log("response >>", response);
             setApikey(response.data.apikey);
             setApikey2(response.data.apikey);

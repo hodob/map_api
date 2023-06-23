@@ -1,19 +1,26 @@
+import secrets
 
 from django.shortcuts import get_object_or_404
 from rest_framework import viewsets
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from django.urls import resolve
 
+from user.serializers.userAPIkeyserializers import UserAPIKeySerializers
 from user.src.encrypt_utils import EncryptUtils
 
 
-class TestViewSet(viewsets.ViewSet):
+class UserApiKeyViewSet(viewsets.ViewSet):
+    permission_classes = (IsAuthenticated,)
+    serializer_class =UserAPIKeySerializers
 
     def list(self, request):
-        encrypt = EncryptUtils()
-        m1 = encrypt.encrypt("test")
+        print(request.user)
+        print(secrets.token_urlsafe(32))
+        # encrypt = EncryptUtils()
+        m1 = EncryptUtils.encrypt("test")
         print(m1)
-        m2 = encrypt.decrypt(m1)
+        m2 = EncryptUtils.decrypt(m1)
         print(m2)
         return Response(m2)
         pass

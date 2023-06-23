@@ -49,7 +49,7 @@ const routes = [
       type: "collapse",
       name: "apikeyselect",
       key: "apikeyselect",
-      route: "/test/apikeyselect",
+      route: "/test",
       // icon: <SpaceShip size="12px" />,
       component: Apikeyselect,
       noCollapse: true,

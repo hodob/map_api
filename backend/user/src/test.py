@@ -3,24 +3,10 @@ from Crypto.Util.Padding import pad, unpad
 from Crypto.Cipher import AES
 import base64,environ
 
+import secrets
 
-class  EncryptUtils:
-    
-    env = environ.Env()
-    key = env('KEY')
-    BS = 16
-    cipher = AES.new(pad(key.encode(), BS), AES.MODE_ECB)
-
-    @staticmethod
-    def encrypt(raw: str, cipher=cipher,BS=BS):
-        encrypted =cipher.encrypt(pad(raw.encode(), BS))
-        return base64.b64encode(encrypted).decode()
-
-    @staticmethod
-    def decrypt(base64decode, cipher=cipher,BS=BS):
-        decrypted=base64.b64decode(base64decode)
-        return unpad(cipher.decrypt(decrypted),BS).decode()
-
+api_key = secrets.token_urlsafe(32)
+print(api_key)
 
 # from Crypto.Cipher import AES
 # from Crypto import Random
