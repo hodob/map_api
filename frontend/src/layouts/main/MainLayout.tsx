@@ -4,14 +4,14 @@ import useGeoLocation from "./components/useGeolocation";
 
 function MainLayout() {
     const location = useGeoLocation();
-    // console.log(location.coordinates)
+    
     return (
         <>
             <div className="App">
                 {location.loaded ? JSON.stringify(location)
       : "Location data not available yet."}
             </div>
-        <KakaoMap location={location.coordinates}/>
+        <KakaoMap/>
         </>
     );
 }

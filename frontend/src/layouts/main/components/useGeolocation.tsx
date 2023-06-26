@@ -9,7 +9,8 @@ interface locationType {
 const useGeolocation = () => {
   const [location, setLocation] = useState<locationType>({
     loaded: false,
-    coordinates: { lat: 0, lng: 0, }
+    // coordinates: { lat: 0, lng: 0, }
+    coordinates: { lat: 35.2397951, lng: 129.0814828, }
   })
 
   // 성공에 대한 로직
