@@ -1,3 +1,7 @@
+
+
+
+
 DROP DATABASE map_api WITH (FORCE);
 CREATE DATABASE map_api
     WITH
@@ -28,9 +32,18 @@ select temp from inu_obs_mi iom where temp='28' or temp = '28.1' group by temp;
 select * from inu_obs_mi order by obs_time  DESC limit 100;
 select id ,max(obs_time) from inu_obs_mi group by id ;
 
-가장 마지막 날짜 데이터   
+--가장 마지막 날짜 데이터   
 select * from inu_obs_mi where (id, obs_time) in (select id ,max(obs_time) from inu_obs_mi group by id) ;
 select * from inu_obs_mi where id = 866642054441003;
 
 select id 장비번호 ,max(obs_time) 날짜 ,pow , temp , mb, mb_std , delta , vi_time , inu_depth  from inu_obs_mi group by id ;
+
+
+-- PK로 수정 
+ALTER TABLE public.inu_info ADD PRIMARY KEY (id);
+
+-- 외래키로 수정
+ALTER TABLE public.inu_obs_mi ADD CONSTRAINT inu_obs_mi_fk FOREIGN KEY (id) REFERENCES public.inu_info(id);
+
+
 
