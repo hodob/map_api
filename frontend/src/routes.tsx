@@ -2,7 +2,7 @@ import Login from "./layouts/authentication/Login";
 import Signup from "./layouts/authentication/Signup";
 import MainLayout from "./layouts/main/MainLayout";
 import Logout from "./layouts/authentication/Logout";
-import Apikeyselect from "./layouts/test/apikeyselect";
+import Test from "./layouts/test/test";
 
 
 const routes = [
@@ -47,9 +47,18 @@ const routes = [
     },
     {
       type: "collapse",
-      name: "apikeyselect",
-      key: "apikeyselect",
+      name: "test",
+      key: "test",
       route: "/test",
+      // icon: <SpaceShip size="12px" />,
+      component: Test,
+      noCollapse: true,
+    },
+    {
+      type: "collapse",
+      name: "apiselect",
+      key: "apiselect",
+      route: "/apis/select",
       // icon: <SpaceShip size="12px" />,
       component: Apikeyselect,
       noCollapse: true,

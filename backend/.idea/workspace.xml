@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35b0bcbe-1c60-4dd4-b2d5-b3506cd361fd" name="Changes" comment="encrypt_utils.py repactoring">
+    <list default="true" id="35b0bcbe-1c60-4dd4-b2d5-b3506cd361fd" name="Changes" comment="api 도 하다가 이제 비로그인시 도 처리해야함">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/serializers/customuserserializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/serializers/customuserserializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/serializers/userAPIkeyserializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/serializers/userAPIkeyserializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/src/userEnum.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/userEnum.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/viewsets/userApiKy.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/viewsets/userApiKy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/layouts/test/apikeyselect.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/layouts/test/apikeyselect.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,16 +36,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/dats/Documents/dev/python/dats/map_api/backend/user/src",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/dats/Documents/dev/python/dats/map_api/backend/user/src&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.github.copilot.settings.ApplicationConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
       <console-settings module-name="backend" is-module-sdk="true">
@@ -224,7 +228,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687496696528</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="api 도 하다가 이제 비로그인시 도 처리해야함">
+      <created>1687497816823</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1687497816825</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -249,6 +260,7 @@
     <MESSAGE value="엡 추가" />
     <MESSAGE value="db add" />
     <MESSAGE value="encrypt_utils.py repactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="encrypt_utils.py repactoring" />
+    <MESSAGE value="api 도 하다가 이제 비로그인시 도 처리해야함" />
+    <option name="LAST_COMMIT_MESSAGE" value="api 도 하다가 이제 비로그인시 도 처리해야함" />
   </component>
 </project>

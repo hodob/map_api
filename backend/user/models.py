@@ -18,9 +18,24 @@ class UserManager(BaseUserManager):
         #     raise TypeError("Users must have an email.")
 
         user = self.model(name=name, email=self.normalize_email(email))
-        user.set_password(password)
+        user.set_password (password)
         user.save(using=self._db)
         return user
+class KeyManager(models.Manager):
+
+    def create_key(self, **kwargs):
+        key = self.create(**kwargs)
+        return key
+
+    def active_keys(self):
+        return self.filter(is_active=True)
+
+    def expired_keys(self):
+        return self.filter(is_active=True, expiration_date__lt=models.timezone.now().date())
+
+    def deactivate_all(self):
+        self.update(is_active=False)
+
 class User(AbstractBaseUser, PermissionsMixin):
 
     email = models.EmailField(db_index=True, unique=True)
@@ -52,9 +67,11 @@ class UserAPIKey(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     key = models.CharField(max_length=255, unique=True)
     is_active = models.BooleanField(default=True)
-    expiration_date = models.DateField()
+    create_date = models.DateField(auto_now=True)
+    expiration_date = models.DateField(null=True)
     category = models.CharField(max_length=20, choices=[(status.value, status.value) for status in ApiKeyCategory])
 
+    objects = KeyManager()
     def __str__(self):
         return self.key
 

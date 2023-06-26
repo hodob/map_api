@@ -1,37 +1,37 @@
 import secrets
-
-from django.shortcuts import get_object_or_404
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
-from django.urls import resolve
 
+from user.models import UserAPIKey
 from user.serializers.userAPIkeyserializers import UserAPIKeySerializers
 from user.src.encrypt_utils import EncryptUtils
 from rest_framework import status
 
+from user.src.userEnum import ApiKeyCategory
+
+
 class UserApiKeyViewSet(viewsets.GenericViewSet):
     permission_classes = (IsAuthenticated,)
-    serializer_class =UserAPIKeySerializers
+    serializer_class = UserAPIKeySerializers
 
     def list(self, request):
-        print(request.user)
-
-        key = secrets.token_urlsafe(32)
-        print("key : "+ key)
-        m1 = EncryptUtils.encrypt(key)
-        print(m1)
-        m2 = EncryptUtils.decrypt(m1)
-        print(m2)
-        serializer = self.get_serializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        return Response(serializer.validated_data, status=status.HTTP_200_OK)
+        user_id = request.user.id
+        queryset = UserAPIKey.objects.filter(user_id=user_id)
+        serializer = UserAPIKeySerializers(queryset, many=True)
+        data = serializer.data
+        return Response(data.get('key'))
 
 
     def create(self, request):
-        # HTTP POST 요청에 대한 처리를 담당합니다.
-        # 새로운 사용자를 생성하기 위해 요청으로부터 받은 데이터를 사용하여 새로운 사용자를 만듭니다.
-        pass
+        key = EncryptUtils.encrypt(secrets.token_urlsafe(32))
+        data = {'key': key, 'category': ApiKeyCategory.INU.name, "user_id": request.user.id}
+        del key
+        serializer = self.get_serializer(data=data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response({"key": EncryptUtils.decrypt(serializer.validated_data['key'])}, status=status.HTTP_200_OK)
+
 
     def retrieve(self, request, pk=None):
         # HTTP GET 요청에 대한 처리를 담당합니다.
