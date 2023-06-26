@@ -6,7 +6,7 @@ from user.models import UserAPIKey
 
 class TestViewSet(viewsets.ViewSet):
 
-
+# 35.2397951,129.0814828
     def list(self, request):
         conn = psycopg.connect(host='jjjteam.duckdns.org', dbname='tp_db', user='postgres', password='wjdgh7578@',
                                port=5432)
