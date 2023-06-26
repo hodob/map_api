@@ -3,6 +3,7 @@ import Signup from "./layouts/authentication/Signup";
 import MainLayout from "./layouts/main/MainLayout";
 import Logout from "./layouts/authentication/Logout";
 import Test from "./layouts/test/test";
+import ApiSelect from "./layouts/apis/apiselect";
 
 
 const routes = [
@@ -60,7 +61,7 @@ const routes = [
       key: "apiselect",
       route: "/apis/select",
       // icon: <SpaceShip size="12px" />,
-      component: Apikeyselect,
+      component: ApiSelect,
       noCollapse: true,
     },
         // {

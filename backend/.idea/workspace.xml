@@ -6,12 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="35b0bcbe-1c60-4dd4-b2d5-b3506cd361fd" name="Changes" comment="api 도 하다가 이제 비로그인시 도 처리해야함">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/serializers/customuserserializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/serializers/customuserserializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/serializers/userAPIkeyserializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/serializers/userAPIkeyserializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/src/userEnum.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/userEnum.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/viewsets/userApiKy.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/viewsets/userApiKy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/layouts/test/apikeyselect.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/layouts/test/apikeyselect.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/layouts/apis/apiselect.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/layouts/apis/apiselect.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/routes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/routes.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
