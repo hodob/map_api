@@ -8,7 +8,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/viewsets/userApiKy.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/viewsets/userApiKy.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/layouts/apis/apiselect.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/layouts/apis/apiselect.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/routes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/routes.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

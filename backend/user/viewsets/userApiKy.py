@@ -24,7 +24,7 @@ class UserApiKeyViewSet(viewsets.GenericViewSet):
         # keys = [(item['key'], item['category']) for item in data]
         keys = [{'key': item['key'], 'category': item['category']} for item in data]
         print(keys)
-        
+
         # return Response(data.get('key'))
         return Response(keys,status=status.HTTP_200_OK)
 

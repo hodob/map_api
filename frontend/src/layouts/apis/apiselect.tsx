@@ -4,17 +4,17 @@ import { useAuth } from '../../auth-context/auth.context';
 
 
 interface DataTableProps {
-    data: {
+    datas: {
       key: string;
       category: string;
     }[];
   }
   
-  const DataTable:React.FC<DataTableProps> = ({ data }) => {
-    console.log(...data)
+  const DataTable:React.FC<DataTableProps> = ({ datas }) => {
+    console.log(...datas)
     return (
         <>
-         {data.map((item, index) => (
+         {datas&&datas.map((item, index) => (
         <div key={index}>
           <p>Key: {item.key}</p>
           <p>Category: {item.category}</p>
@@ -27,6 +27,7 @@ interface DataTableProps {
 
 export default function ApiSelect(){
     let user = useAuth();
+    console.log(user)
     const [apikey, setApikey] = useState<string>("");
     const [apikey2, setApikey2] = useState<string>("");
     const [testresult, setTestResult] = useState<any>("");
@@ -39,7 +40,7 @@ export default function ApiSelect(){
     
     const CreateApiCall = async () => {
         try {
-            const response = await Axios.post('http://localhost:8000/api/users/apis', { headers: { Authorization: `${user?.token}` }});
+            const response = await Axios.post('http://localhost:8000/api/users/apis',"" ,{ headers: { Authorization: `${user?.token}` }});
             console.log("response >>", response.data);
             setApikey(response.data.key);
             setApikey2(response.data.key);
@@ -65,7 +66,7 @@ export default function ApiSelect(){
             <h1>api키 : {apikey}</h1>
             <button onClick={TestApiCall}>apiKey목록</button>
             {/* <h1>테스트결과 : {testresult}</h1> */}
-            <DataTable data={testresult} />
+            <DataTable datas={testresult} />
         </div>
     )
 }
