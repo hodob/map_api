@@ -1,21 +1,41 @@
-
-from django.shortcuts import get_object_or_404
 from rest_framework import viewsets
 from rest_framework.response import Response
-from django.urls import resolve
-
-from user.src.encrypt_utils import EncryptUtils
+import psycopg2 as psycopg
+from user.models import UserAPIKey
 
 
 class TestViewSet(viewsets.ViewSet):
 
+
     def list(self, request):
-        encrypt = EncryptUtils()
-        m1 = encrypt.encrypt("test")
-        print(m1)
-        m2 = encrypt.decrypt(m1)
-        print(m2)
-        return Response(m2)
+        conn = psycopg.connect(host='jjjteam.duckdns.org', dbname='tp_db', user='postgres', password='wjdgh7578@',
+                               port=5432)
+        cur = conn.cursor()
+        apikey= request.GET['apikey']
+        tm1 = request.GET['tm1']
+        tm2 = request.GET['tm2']
+        print(apikey)
+        select_data = str("SELECT * FROM public.inu_obs_mi WHERE obs_time BETWEEN '%s' AND '%s' ; " % (tm1, tm2))
+        # SELECT * FROM public.inu_obs_mi WHERE obs_time BETWEEN '2022-07-22 17:50:45.629947' AND '2022-07-22 17:51:35.803452' ;
+        cur.execute(select_data)
+        data = cur.fetchall()
+
+        # Convert the data to a list of dictionaries
+        columns = [desc[0] for desc in cur.description]
+        print(columns)
+        print(data)
+        data_dicts = [dict(zip(columns, row)) for row in data]
+        for row in data:
+            row_list = list(row)
+            for i in row_list:
+                # if type(i) is datetime.datetime:
+                #     row_list[row_list.index(i)]=str(i)
+                row_list[row_list.index(i)] = str(i)
+            row = tuple(row_list)
+        cur.close()
+
+        return Response(data_dicts)
+        return Response({"message": "Hello, world!"})
         pass
 
     def create(self, request):

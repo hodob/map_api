@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="35b0bcbe-1c60-4dd4-b2d5-b3506cd361fd" name="Changes" comment="api 도 하다가 이제 비로그인시 도 처리해야함">
-      <change afterPath="$PROJECT_DIR$/user/src/apiPermissions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apidata/routers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apidata/viewsets/TestViewSet.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apidata/viewsets/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/src/apiPermissions.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/apiPermissions.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,16 +35,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/dats/Documents/dev/python/dats/map_api/backend/user/src&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.github.copilot.settings.ApplicationConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/dats/Documents/dev/python/dats/map_api/backend/apidata",
+    "settings.editor.selected.configurable": "com.github.copilot.settings.ApplicationConfigurable"
   }
-}</component>
+}]]></component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
       <console-settings module-name="backend" is-module-sdk="true">
@@ -51,11 +55,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dats\Documents\dev\python\dats\map_api\backend\apidata" />
       <recent name="C:\Users\dats\Documents\dev\python\dats\map_api\backend\user\src" />
       <recent name="C:\Users\dats\Documents\dev\python\dats\map_api\backend\user\viewsets" />
       <recent name="C:\Users\dats\Documents\map_api\backend\user\models" />
       <recent name="C:\Users\dats\Documents\map_api\backend\user\src" />
-      <recent name="C:\Users\dats\Documents\map_api\backend\user\serializers" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\dats\Documents\map_api\backend\user" />
