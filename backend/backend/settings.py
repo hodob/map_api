@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'environ',
     'user.apps.UserConfig',
     'apidata.apps.ApidataConfig',
+    'mapdata.apps.MapdataConfig',
 ]
 
 MIDDLEWARE = [
