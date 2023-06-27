@@ -1,42 +1,20 @@
 from rest_framework import viewsets
 from rest_framework.response import Response
-import psycopg2 as psycopg
-from user.models import UserAPIKey
+from mapdata.src.db_connect import get_database_connection
 
 
 class TestViewSet(viewsets.ViewSet):
 
 # 35.2397951,129.0814828
     def list(self, request):
-        conn = psycopg.connect(host='jjjteam.duckdns.org', dbname='tp_db', user='postgres', password='wjdgh7578@',
-                               port=5432)
+        conn = get_database_connection()
         cur = conn.cursor()
-        apikey= request.GET['apikey']
-        tm1 = request.GET['tm1']
-        tm2 = request.GET['tm2']
-        print(apikey)
-        select_data = str("SELECT * FROM public.inu_obs_mi WHERE obs_time BETWEEN '%s' AND '%s' ; " % (tm1, tm2))
-        # SELECT * FROM public.inu_obs_mi WHERE obs_time BETWEEN '2022-07-22 17:50:45.629947' AND '2022-07-22 17:51:35.803452' ;
+        select_data = str("select * from inu_obs_mi where (id, obs_time) in (select id ,max(obs_time) from inu_obs_mi group by id)")
         cur.execute(select_data)
         data = cur.fetchall()
-
-        # Convert the data to a list of dictionaries
-        columns = [desc[0] for desc in cur.description]
-        print(columns)
-        print(data)
-        data_dicts = [dict(zip(columns, row)) for row in data]
-        for row in data:
-            row_list = list(row)
-            for i in row_list:
-                # if type(i) is datetime.datetime:
-                #     row_list[row_list.index(i)]=str(i)
-                row_list[row_list.index(i)] = str(i)
-            row = tuple(row_list)
         cur.close()
+        return Response(data)
 
-        return Response(data_dicts)
-        return Response({"message": "Hello, world!"})
-        pass
 
     def create(self, request):
         # HTTP POST 요청에 대한 처리를 담당합니다.
