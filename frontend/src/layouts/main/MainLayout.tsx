@@ -20,51 +20,65 @@ type MakerDataType = {
 
 
 function MainLayout() {
+    
     const location = useGeoLocation();
     const [maker, setMaker] = useState<MakerDataType[]>();
     const [isOpenMap, setIsOpenMap] = useState<{ id: string, data:boolean }[]>([]);
 
-    const CreateApiCall = async () => {
-        try {
-            const response = await Axios.get('http://localhost:8000/map/test2');
-            setMaker(response.data)
-            console.log("통신시작")
-            console.log(maker)
-            console.log("통신끝")
-        } catch (err) {
-            console.log("Error >>", err);
-        }
-    }
-    console.log(maker)
-    if(!maker){ CreateApiCall()}
-    useEffect(() => {
-        
-        if (maker) {
-            const updatedIsOpenMap:{ id: string, data:boolean }[] = [];
-            for (let i = 0; i < maker.length; i++) {
-              updatedIsOpenMap.push({ id: maker[i].title, data: false });
+
+    // console.log(maker)
+    // CreateApiCall()
+    // if(!maker){ 
+    //     console.log("if 시작")
+    //     CreateApiCall()
+    //     console.log("if 끝")
+    // }
+    useEffect(()=>{
+        console.log("useEffect 시작")
+        const CreateApiCall = async () => {
+            try {
+                const response = await Axios.get('http://localhost:8000/map/test2');
+                console.log(" setMaker(response.data) 시작 ")
+                setMaker(response.data)
+                console.log("통신시작")
+                console.log(maker)
+                console.log("통신끝")
+            } catch (err) {
+                console.log("Error >>", err);
             }
-            console.log(updatedIsOpenMap)
-            setIsOpenMap(updatedIsOpenMap);
         }
-    }, []);
+        CreateApiCall()
+        console.log("useEffect 끝")
+    },[])
+
+    // useEffect(() => {
+        
+    //     if (maker) {
+    //         const updatedIsOpenMap:{ id: string, data:boolean }[] = [];
+    //         for (let i = 0; i < maker.length; i++) {
+    //           updatedIsOpenMap.push({ id: maker[i].title, data: false });
+    //         }
+    //         console.log(updatedIsOpenMap)
+    //         setIsOpenMap(updatedIsOpenMap);
+    //     }
+    // }, []);
 
 
-    // const [isOpen, setIsOpen] = useState(false)
+    // // const [isOpen, setIsOpen] = useState(false)
 
-    // const markerPosition = { lat: 35.2417951, lng: 129.0834828 }
+    // // const markerPosition = { lat: 35.2417951, lng: 129.0834828 }
     
 
 
     return (
         <>
-            <div className="App">{location.loaded ? JSON.stringify(location) : "Location data not available yet."}</div>
+            {/* <div className="App">{location.loaded ? JSON.stringify(location) : "Location data not available yet."}</div>
             <Map
                 center={{ lat: 35.2417951, lng: 129.0834828 }}
                 style={{ width: "100%", height: "360px" }}
             >
                 {maker?.map((item, index) => (
-                    <React.Fragment key={`${item.title}-${index}`}>
+                    <React.Fragment key={`${item.title}-${index}`}> */}
                         {/* {isOpenMap.find(a => a.id === item.title)?.data && (
                             <CustomOverlayMap position={item.latlng}>
                                 <div className="wrap">
@@ -88,14 +102,14 @@ function MainLayout() {
                             </CustomOverlayMap>
                         )} */}
                         {/* <MapMarker position={item.latlng} onClick={() =>setIsOpenMap(isOpenMap.map((a)=>(a.id===item.title ? {...a, data:true}:a)))} /> */}
-                        <MapMarker position={item.latlng} onClick={()=>{
+                        {/* <MapMarker position={item.latlng} onClick={()=>{
                             console.log(item.title)
                             console.log(isOpenMap)
                             }} />
                     </React.Fragment>
                 ))}
 
-            </Map>
+            </Map> */}
 
 
 
