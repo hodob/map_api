@@ -15,13 +15,13 @@ const root = ReactDOM.createRoot(
 let userdata = JSON.parse(localStorage.getItem("user") || '{}');
 
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <BrowserRouter>
     <AuthProvider userData={userdata}>
         <App />
       </AuthProvider>
     </BrowserRouter>
-  </React.StrictMode>
+  // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
