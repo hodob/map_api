@@ -28,13 +28,17 @@ function MainLayout() {
         try {
             const response = await Axios.get('http://localhost:8000/map/test2');
             setMaker(response.data)
+            console.log("통신시작")
+            console.log(maker)
+            console.log("통신끝")
         } catch (err) {
             console.log("Error >>", err);
         }
     }
+    console.log(maker)
+    if(!maker){ CreateApiCall()}
     useEffect(() => {
-        CreateApiCall()
-        console.log(maker)
+        
         if (maker) {
             const updatedIsOpenMap:{ id: string, data:boolean }[] = [];
             for (let i = 0; i < maker.length; i++) {
@@ -44,9 +48,6 @@ function MainLayout() {
             setIsOpenMap(updatedIsOpenMap);
         }
     }, []);
-
-    
-
 
 
     // const [isOpen, setIsOpen] = useState(false)
@@ -64,7 +65,7 @@ function MainLayout() {
             >
                 {maker?.map((item, index) => (
                     <React.Fragment key={`${item.title}-${index}`}>
-                        {isOpenMap.find(a => a.id === item.title)?.data && (
+                        {/* {isOpenMap.find(a => a.id === item.title)?.data && (
                             <CustomOverlayMap position={item.latlng}>
                                 <div className="wrap">
                                     <div className="info">
@@ -85,14 +86,14 @@ function MainLayout() {
                                 </div>
                                 ;
                             </CustomOverlayMap>
-                        )}
-                        <MapMarker position={item.latlng} onClick={() =>setIsOpenMap(isOpenMap.map((a)=>(a.id===item.title ? {...a, data:true}:a)))} />
+                        )} */}
+                        {/* <MapMarker position={item.latlng} onClick={() =>setIsOpenMap(isOpenMap.map((a)=>(a.id===item.title ? {...a, data:true}:a)))} /> */}
+                        <MapMarker position={item.latlng} onClick={()=>{
+                            console.log(item.title)
+                            console.log(isOpenMap)
+                            }} />
                     </React.Fragment>
                 ))}
-
-                
-
-
 
             </Map>
 
